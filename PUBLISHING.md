@@ -3,6 +3,11 @@
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
 
+Release file: `Nutriwork-v1.3.0.zip` (built by `tools/build-release.ps1`) bundles the
+**datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
+`Nutriwork-Datapack-v1.3.0.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
+if a store prefers separate uploads.
+
 ## Tagline
 
 > Your diet finally matters — a modern nutrition system in a vanilla datapack.

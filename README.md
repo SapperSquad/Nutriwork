@@ -46,13 +46,17 @@ pack — see `HUD.md`.
 
 ## Install
 
-1. Download and drop `Nutriwork` into your world's `datapacks/` folder (single-player:
-   *Open World Folder → datapacks*; server: `world/datapacks/`).
-2. `/reload` (or rejoin). You'll see a green "Nutriwork loaded" message.
-3. That's it — nutrition tracks itself from your first bite.
+The download (`Nutriwork-v1.3.0.zip`) contains two packs and an `INSTALL.txt`:
 
-To remove cleanly: `/function nutriwork:admin/uninstall`, then delete the pack and
-`/reload`.
+1. **Nutriwork Datapack.zip** (required) — drop into your world's `datapacks/` folder
+   (single-player: *Open World Folder → datapacks*; server: `world/datapacks/`), then
+   `/reload` (or rejoin). You'll see a green "Nutriwork loaded" message.
+2. **Nutriwork HUD Resource Pack.zip** (optional) — drop into `resourcepacks/`, enable it,
+   then run `/function nutriwork:hud/icons_on` for food-group icons on the bars. Everything
+   works without it (plain text labels).
+
+That's it — nutrition tracks itself from your first bite. To remove cleanly:
+`/function nutriwork:admin/uninstall`, then delete the pack and `/reload`.
 
 ## Server tuning
 

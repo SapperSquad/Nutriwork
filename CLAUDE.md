@@ -66,6 +66,18 @@ server-facing surface.
 Known harmless quirk: on `/reload` the console prints "objective already exists" for each
 track — expected (re-adding is how load stays idempotent without wiping scores).
 
+## Building a release
+
+`powershell -File tools\build-release.ps1` (re)builds `dist/`:
+- `Nutriwork-v<ver>.zip` — the **release bundle**: `Nutriwork Datapack.zip` +
+  `Nutriwork HUD Resource Pack.zip` + `INSTALL.txt`. This is the download.
+- standalone `Nutriwork-Datapack-v<ver>.zip` and `Nutriwork-HUD-ResourcePack-v<ver>.zip`
+  for stores that prefer separate files.
+
+Bump the `$ver` / `$rpver` at the top of the script per release. Regenerate the RP glyph
+PNGs first with `tools/GenHudIcons.java` if they're missing. `dist/` and `build/` are
+gitignored.
+
 ## Roadmap (post-v1.0)
 
 - **Water bottles — DONE (v1.2.0).** `advancement/eat/water_bottle.json` matches
