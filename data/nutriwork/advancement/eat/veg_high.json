@@ -1,0 +1,1 @@
+{"criteria":{"eat":{"trigger":"minecraft:consume_item","conditions":{"item":{"items":"#nutriwork:grant/veg_high"}}}},"rewards":{"function":"nutriwork:eat/veg_high"}}

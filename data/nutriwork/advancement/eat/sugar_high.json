@@ -1,0 +1,1 @@
+{"criteria":{"eat":{"trigger":"minecraft:consume_item","conditions":{"item":{"items":"#nutriwork:grant/sugar_high"}}}},"rewards":{"function":"nutriwork:eat/sugar_high"}}

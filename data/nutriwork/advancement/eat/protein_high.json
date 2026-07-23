@@ -1,0 +1,1 @@
+{"criteria":{"eat":{"trigger":"minecraft:consume_item","conditions":{"item":{"items":"#nutriwork:grant/protein_high"}}}},"rewards":{"function":"nutriwork:eat/protein_high"}}

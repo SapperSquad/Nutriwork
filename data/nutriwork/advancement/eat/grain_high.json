@@ -1,0 +1,1 @@
+{"criteria":{"eat":{"trigger":"minecraft:consume_item","conditions":{"item":{"items":"#nutriwork:grant/grain_high"}}}},"rewards":{"function":"nutriwork:eat/grain_high"}}
