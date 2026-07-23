@@ -10,8 +10,8 @@ to it with `required:false`, so they keep loading without it.
 ## How it plugs in (why it doesn't double-count)
 
 Each compat tag is **included into the matching core grant-tag**, not given its own
-advancement. So a modded steak that lives in `#c:foods/cooked_meat` becomes a member of
-`#nutriwork:grant/protein_med` and fires that one existing advancement — same path a
+advancement. So a modded steak in `#c:foods/cooked_beef` becomes a member of
+`#nutriwork:grant/protein_high` and fires that one existing advancement — same path a
 vanilla food takes. Because it's one tag, an item that appears via several routes is
 deduplicated and still grants **once** per bite.
 
@@ -35,23 +35,37 @@ both:
 | `fruit_med`   | +25 | `#c:foods/fruit` |
 | `veg_med`     | +25 | `#c:foods/vegetable`, `#c:foods/leafy_green` |
 | `grain_med`   | +25 | `#c:foods/bread`, `#c:foods/pasta`, `#c:foods/cooked_rice` |
-| `protein_low` | +12 | `#c:foods/raw_meat`, `#c:foods/raw_fish`, `#c:eggs` |
-| `protein_med` | +25 | `#c:foods/cooked_meat`, `#c:foods/cooked_fish`, `#c:foods/cheese`, `#c:foods/soup` |
+| `protein_high`| +40 | `#c:foods/cooked_beef`, `#c:foods/cooked_pork` |
+| `protein_med` | +25 | `#c:foods/cooked_chicken`, `#c:foods/cooked_mutton`, `#c:foods/cooked_rabbit`, `#c:foods/cooked_bacon`, `#c:foods/cooked_fish`, `#c:foods/roasted_dragon_meat`, `#c:foods/roasted_shulker_meat`, `#c:foods/cheese`, `#c:foods/soup` |
+| `protein_low` | +12 | `#c:foods/raw_beef`, `#c:foods/raw_pork`, `#c:foods/raw_chicken`, `#c:foods/raw_mutton`, `#c:foods/raw_rabbit`, `#c:foods/raw_fish`, `#c:eggs` |
 | `sugar_low`   | +12 | `#c:foods/cookie` |
 | `sugar_med`   | +25 | `#c:foods/pie`, `#pantrywork:food_component/sweetener` |
 | `water`       | +30 | `#c:drinks/milk`, `#c:foods/soup`, `#pantrywork:food_component/liquid_base` |
 
 Soups intentionally feed **both** protein and water — the modded echo of vanilla stews.
 
-## Known, bounded quirk (modded servers only)
+## Double-count: meats are exact, fruit/veg have a tiny residual
 
 The `c:foods/*` convention also carries **vanilla** items on modded platforms (NeoForge/FD
-populate it). Where a vanilla food's exact tier differs from the tier its broad `c:` group
-routes to — e.g. `minecraft:cooked_beef` is `protein_high` for us, but `#c:foods/cooked_meat`
-routes to `protein_med` — that food gains a small **same-group** top-up on a modded server
-(here, +25 protein on top of its +40). It is always the same group, never a
-mis-categorisation, and everything caps at 100. On vanilla there is no overlap and no
-effect. Accepted as a fair trade for zero-maintenance breadth; see `DECISIONS.md`.
+populate it), so a broad category tag routed to one tier can top up a vanilla food that
+sits at a different tier.
+
+**Meats are handled exactly.** Each species tag is routed to the tier of its vanilla
+counterpart (`cooked_beef`/`cooked_pork` → high, `cooked_chicken`/`mutton`/`rabbit`/`fish`
+→ med, all raws → low), so a vanilla cooked steak lands in `protein_high` via both its
+explicit entry and `#c:foods/cooked_beef` — one tag, deduplicated, granted once. No
+double-count. (The trade: a modded meat tagged *only* into the broad `#c:foods/cooked_meat`
+parent, with no species tag, isn't picked up — add it to the relevant `compat/protein_*`
+file if a mod does that.)
+
+**Fruit & veg keep a deliberate residual.** `#c:foods/fruit` and `#c:foods/vegetable` are
+broad and have no per-tier species tags, so a low-tier vanilla item that also sits in them
+(e.g. a potato, at `veg_low`, inside `#c:foods/vegetable` → `veg_med`) can gain a small
+**same-group** top-up on a modded server. It's always the same group, never a
+mis-categorisation, capped at 100, and zero effect on vanilla. Kept on purpose: dropping
+the broad fruit/veg tags would lose most modded fruit/veg coverage (Croptopia alone adds
+hundreds). Worth far more than trimming a few points off a vanilla potato. See
+`DECISIONS.md`.
 
 ## Adding another mod
 

@@ -41,6 +41,8 @@ Runs anywhere vanilla does. Made by SapperSquad.
 - Optional, absent-safe compatibility with the `c:foods/*` convention and **Pantrywork**'s
   interop tags — foods from Farmer's Delight, Croptopia, Pam's HarvestCraft, Ocean's/End's
   Delight and any mod following the convention are sorted automatically.
+- Per-species meat tiering (cooked beef & pork outrank chicken, fish and the rest), so
+  vanilla foods are never double-counted when a food mod is present.
 - Zero impact on vanilla worlds: compat tags no-op when the mods aren't present, and the
   `compat/` folder is deletable to switch it off.
 

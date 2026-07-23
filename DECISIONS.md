@@ -52,12 +52,21 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   must load on vanilla with zero modded tags present. Verified: 20 cross-mod refs, all
   optional.
 
-- **Accepted a bounded same-group top-up on modded servers.** A vanilla food whose exact
-  tier differs from the tier its broad `c:` category routes to (e.g. cooked beef is
-  `protein_high` but `#c:foods/cooked_meat` routes to `protein_med`) gains a little extra
-  of the *same group* when those `c:` tags carry vanilla items. Always same-group, never a
-  wrong category, always capped at 100, and zero effect on vanilla. Chosen over
-  hand-maintaining per-species tier tags for every mod. Details in `COMPAT.md`.
+- **Meats routed by per-species tags, not the broad parent.** `#c:foods/cooked_meat` /
+  `#c:foods/raw_meat` mix tiers (beef is high, chicken is med), so routing the parent
+  double-counted vanilla meats on modded servers. Replaced with species tags matched to
+  each vanilla tier (`cooked_beef`/`cooked_pork`→high, `chicken`/`mutton`/`rabbit`/`fish`→
+  med, raws→low), so vanilla meats dedup in one tag and never double-count. Exotic modded
+  meats kept via their own species tags (`roasted_dragon_meat`, `roasted_shulker_meat`).
+  Trade: a meat tagged *only* into the broad parent isn't caught — acceptable, add it to
+  `compat/protein_*` if needed.
+
+- **A tiny same-group residual remains for fruit/veg only, on purpose.** `#c:foods/fruit`
+  and `#c:foods/vegetable` are broad with no per-tier species tags, so a low-tier vanilla
+  item inside them (e.g. potato) can get a small same-group top-up on modded servers.
+  Always same-group, capped at 100, zero effect on vanilla. Kept because dropping the broad
+  fruit/veg tags would lose most modded fruit/veg coverage — a far bigger loss than a few
+  points on a vanilla potato. Details in `COMPAT.md`.
 
 - **Objective creation is idempotent-by-tolerance.** `core/load` re-adds objectives every
   `/reload`, which logs a harmless "already exists". Accepted deliberately — removing and

@@ -1,1 +1,1 @@
-{"values":["minecraft:cooked_beef","minecraft:cooked_porkchop"]}
+{"values":["minecraft:cooked_beef","minecraft:cooked_porkchop",{"id":"#nutriwork:compat/protein_high","required":false}]}
