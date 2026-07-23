@@ -18,7 +18,7 @@ Every food you eat feeds one or more of six tracks (0–100):
 | 🌾 **Grain** | bread, cookie, pumpkin pie |
 | 🍖 **Meat / Protein** | cooked & raw meats and fish, stews |
 | 🍬 **Sugar** | cookie, pumpkin pie, honey bottle |
-| 💧 **Water** | milk, honey, soups, juicy fruits |
+| 💧 **Water** | water bottles, milk, honey, soups, juicy fruits |
 
 Cooked foods and "golden" foods are worth more than raw. Some foods count twice — a
 pumpkin pie feeds **grain and sugar**, a melon slice feeds **fruit and water**.

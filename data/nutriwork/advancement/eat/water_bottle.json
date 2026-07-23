@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "eat": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:potion"
+          ],
+          "predicates": {
+            "minecraft:potion_contents": [
+              "minecraft:water"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "nutriwork:eat/water_bottle"
+  }
+}

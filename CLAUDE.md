@@ -6,9 +6,9 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.1.0 (Pantrywork compat), load-clean, awaiting in-game sign-off
+## Status — v1.2.0 (water bottles), load-clean, awaiting in-game sign-off
 
-- All 77 data files present; **all JSON parses, no BOM, every cross-reference resolves**
+- All 80 data files present; **all JSON parses, no BOM, every cross-reference resolves**
   (function tags → functions, advancement rewards → functions, `advancement revoke` →
   advancements). Static validation passes.
 - **Not yet confirmed in a running client** — see "How to test" below. Do that once and
@@ -61,10 +61,13 @@ track — expected (re-adding is how load stays idempotent without wiping scores
 
 ## Roadmap (post-v1.0)
 
-- **Water bottles:** plain water bottles aren't detected yet (they're all `minecraft:potion`;
-  needs a `minecraft:potion_contents` component predicate — verify its exact shape in-game
-  before shipping, and keep it in its own advancement so a bad predicate can't affect the
-  rest). Milk/honey/soups/juicy foods already hydrate via `tags/item/water.json`.
+- **Water bottles — DONE (v1.2.0).** `advancement/eat/water_bottle.json` matches
+  `minecraft:potion` filtered by `minecraft:potion_contents: ["minecraft:water"]`. The
+  predicate shape was **verified against 1.21.1 source** (`ItemPotionsPredicate` is
+  registered `potion_contents` with a `HolderSet<Potion>` value; `ItemPredicate` nests
+  sub-predicates under `predicates`), so it's not a guess. Isolated in its own
+  advancement + `eat/water_bottle` function. Milk/honey/soups/juicy foods still hydrate
+  via `tags/item/water.json`.
 - **Modded-food compat — DONE (v1.1.0).** Optional `tags/item/compat/*` route the
   `c:foods/*` + `pantrywork:food_component/*` tags into the grant-tags (all
   `required:false`, absent on vanilla). Included *into* the grant-tags, not via parallel

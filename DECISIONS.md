@@ -26,11 +26,15 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   (hidden Weakness when dehydrated, brief Slowness when stuffed). It never deletes items,
   damages the player, or hard-starves — vanilla hunger is the stick.
 
-- **Hydration from an item tag, water bottles deferred.** Milk, honey, soups and juicy
-  foods hydrate via `tags/item/water.json` (all guaranteed-valid simple item ids). Plain
-  water bottles are all `minecraft:potion` and need a `potion_contents` component predicate
-  whose exact shape must be confirmed in-game; shipping an unverified predicate that might
-  fail to load wasn't worth it for v1. It's a clean, isolated future add.
+- **Hydration comes from an item tag, plus a verified water-bottle predicate.** Milk,
+  honey, soups and juicy foods hydrate via `tags/item/water.json` (simple item ids). Plain
+  water bottles (all `minecraft:potion`) get their own advancement (`eat/water_bottle`)
+  using `minecraft:potion_contents: ["minecraft:water"]`. The predicate is **not a guess** —
+  its shape was read from 1.21.1 source: `ItemPotionsPredicate` registers as `potion_contents`
+  with a `HolderSet<Potion>` value (hence the list form), and `ItemPredicate` nests
+  sub-predicates under `predicates`. Kept isolated so even a wrong predicate could only ever
+  affect water bottles. Only `minecraft:water` matches — awkward/mundane brewing bases are
+  intentionally left out.
 
 - **Players start mid-range**, not empty (fruit/veg/grain/meat 50, sugar 30, water 70), so
   a fresh player isn't instantly penalised and learns the system from a neutral state.

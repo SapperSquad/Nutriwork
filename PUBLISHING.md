@@ -37,6 +37,10 @@ Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
 
+### v1.2.0 — water bottles hydrate
+- Drinking a plain water bottle now fills the hydration track, alongside milk, honey,
+  soups and juicy foods.
+
 ### v1.1.0 — modded food support
 - Optional, absent-safe compatibility with the `c:foods/*` convention and **Pantrywork**'s
   interop tags — foods from Farmer's Delight, Croptopia, Pam's HarvestCraft, Ocean's/End's
