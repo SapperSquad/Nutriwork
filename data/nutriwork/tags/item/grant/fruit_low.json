@@ -1,1 +1,1 @@
-{"values":["minecraft:melon_slice","minecraft:sweet_berries","minecraft:glow_berries","minecraft:chorus_fruit"]}
+{"values":["minecraft:melon_slice","minecraft:sweet_berries","minecraft:glow_berries","minecraft:chorus_fruit",{"id":"#nutriwork:compat/fruit_low","required":false}]}

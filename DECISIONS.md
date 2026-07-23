@@ -40,6 +40,25 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   function so servers retune freely. Chosen for a "eat a couple of times per Minecraft day
   to stay buffed" cadence; tune from play, not theory.
 
+- **Modded-food compat is included *into* the grant-tags, not parallel advancements.**
+  Adding separate compat advancements keyed on `#c:foods/*` would double-count every
+  vanilla food (those tags also carry vanilla items on modded platforms), since the item
+  would fire both its core advancement and the compat one. Instead each `compat/<tier>`
+  tag is nested into the matching core grant-tag, so an item present via several routes is
+  deduplicated in one tag and grants once. Cost: the 9 grant-tags now reference their
+  compat tag — but with `required:false`, so the `compat/` folder stays deletable.
+
+- **Compat refs are all `{"id":…,"required":false}`** (Pantrywork's rule #1). The pack
+  must load on vanilla with zero modded tags present. Verified: 20 cross-mod refs, all
+  optional.
+
+- **Accepted a bounded same-group top-up on modded servers.** A vanilla food whose exact
+  tier differs from the tier its broad `c:` category routes to (e.g. cooked beef is
+  `protein_high` but `#c:foods/cooked_meat` routes to `protein_med`) gains a little extra
+  of the *same group* when those `c:` tags carry vanilla items. Always same-group, never a
+  wrong category, always capped at 100, and zero effect on vanilla. Chosen over
+  hand-maintaining per-species tier tags for every mod. Details in `COMPAT.md`.
+
 - **Objective creation is idempotent-by-tolerance.** `core/load` re-adds objectives every
   `/reload`, which logs a harmless "already exists". Accepted deliberately — removing and
   re-adding would wipe player scores.

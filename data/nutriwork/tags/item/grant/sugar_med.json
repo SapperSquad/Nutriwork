@@ -1,1 +1,1 @@
-{"values":["minecraft:pumpkin_pie","minecraft:honey_bottle"]}
+{"values":["minecraft:pumpkin_pie","minecraft:honey_bottle",{"id":"#nutriwork:compat/sugar_med","required":false}]}

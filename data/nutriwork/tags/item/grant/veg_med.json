@@ -1,1 +1,1 @@
-{"values":["minecraft:carrot","minecraft:baked_potato"]}
+{"values":["minecraft:carrot","minecraft:baked_potato",{"id":"#nutriwork:compat/veg_med","required":false}]}

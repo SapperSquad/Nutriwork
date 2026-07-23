@@ -1,13 +1,1 @@
-{
-  "values": [
-    "minecraft:milk_bucket",
-    "minecraft:honey_bottle",
-    "minecraft:mushroom_stew",
-    "minecraft:rabbit_stew",
-    "minecraft:beetroot_soup",
-    "minecraft:suspicious_stew",
-    "minecraft:melon_slice",
-    "minecraft:sweet_berries",
-    "minecraft:glow_berries"
-  ]
-}
+{"values":["minecraft:milk_bucket","minecraft:honey_bottle","minecraft:mushroom_stew","minecraft:rabbit_stew","minecraft:beetroot_soup","minecraft:suspicious_stew","minecraft:melon_slice","minecraft:sweet_berries","minecraft:glow_berries",{"id":"#nutriwork:compat/water","required":false}]}

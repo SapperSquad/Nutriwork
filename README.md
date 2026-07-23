@@ -65,7 +65,13 @@ to `fruit_med`. One line, then `/reload`.
 
 Pure vanilla data — no conflicts with other datapacks unless they also use the `nw.*`
 scoreboard names or the `#minecraft:tick`/`#minecraft:load` tags (both merge fine).
-Modded foods aren't classified yet (planned as optional add-on tags).
+
+**Modded foods are supported** (optional, absent-safe). Nutriwork reads the standard
+`c:foods/*` food tags and Alex's **Pantrywork** interop tags, so foods from Farmer's
+Delight, Croptopia, Pam's HarvestCraft, Ocean's/End's Delight and any mod following the
+convention get sorted automatically — install Pantrywork for the widest coverage. On
+vanilla, or with those mods absent, the compat tags simply do nothing. See `COMPAT.md`
+for the mapping and how to add more mods.
 
 ---
 

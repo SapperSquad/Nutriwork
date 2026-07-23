@@ -30,11 +30,19 @@ volume, always.
 - A toggleable **HUD** (`/trigger nw.hud`) and a full **journal** readout
 - **Server-tunable** — every value in one config function, `/reload` to apply
 - **Data-driven foods** — reclassify anything by editing one item tag
+- **Modded-food ready** — reads `c:foods/*` and Pantrywork tags; no-ops on vanilla
 - Clean uninstall, no leftover scoreboards
 
 Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
+
+### v1.1.0 — modded food support
+- Optional, absent-safe compatibility with the `c:foods/*` convention and **Pantrywork**'s
+  interop tags — foods from Farmer's Delight, Croptopia, Pam's HarvestCraft, Ocean's/End's
+  Delight and any mod following the convention are sorted automatically.
+- Zero impact on vanilla worlds: compat tags no-op when the mods aren't present, and the
+  `compat/` folder is deletable to switch it off.
 
 ### v1.0.0 — first release
 - Six nutrition tracks (fruit, veg, grain, meat/protein, sugar, hydration) with per-food

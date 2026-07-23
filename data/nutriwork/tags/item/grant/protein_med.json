@@ -1,1 +1,1 @@
-{"values":["minecraft:cooked_chicken","minecraft:cooked_mutton","minecraft:cooked_rabbit","minecraft:cooked_cod","minecraft:cooked_salmon","minecraft:rabbit_stew","minecraft:mushroom_stew","minecraft:beetroot_soup","minecraft:suspicious_stew"]}
+{"values":["minecraft:cooked_chicken","minecraft:cooked_mutton","minecraft:cooked_rabbit","minecraft:cooked_cod","minecraft:cooked_salmon","minecraft:rabbit_stew","minecraft:mushroom_stew","minecraft:beetroot_soup","minecraft:suspicious_stew",{"id":"#nutriwork:compat/protein_med","required":false}]}

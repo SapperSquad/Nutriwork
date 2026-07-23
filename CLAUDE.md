@@ -6,9 +6,9 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.0, load-clean, awaiting in-game sign-off
+## Status — v1.1.0 (Pantrywork compat), load-clean, awaiting in-game sign-off
 
-- All 68 data files present; **all JSON parses, no BOM, every cross-reference resolves**
+- All 77 data files present; **all JSON parses, no BOM, every cross-reference resolves**
   (function tags → functions, advancement rewards → functions, `advancement revoke` →
   advancements). Static validation passes.
 - **Not yet confirmed in a running client** — see "How to test" below. Do that once and
@@ -65,8 +65,11 @@ track — expected (re-adding is how load stays idempotent without wiping scores
   needs a `minecraft:potion_contents` component predicate — verify its exact shape in-game
   before shipping, and keep it in its own advancement so a bad predicate can't affect the
   rest). Milk/honey/soups/juicy foods already hydrate via `tags/item/water.json`.
-- **Modded-food compat:** optional, absent-safe grant-tags classifying common Pantrywork /
-  Farmer's Delight foods (modded ids in a tag simply no-op when the mod is missing).
+- **Modded-food compat — DONE (v1.1.0).** Optional `tags/item/compat/*` route the
+  `c:foods/*` + `pantrywork:food_component/*` tags into the grant-tags (all
+  `required:false`, absent on vanilla). Included *into* the grant-tags, not via parallel
+  advancements, so nothing double-counts. Delete the `compat/` folder to disable. Full
+  mapping and the known bounded same-group top-up on modded servers are in `COMPAT.md`.
 - **HUD polish:** optional resource-pack companion with custom glyphs for a nicer bar.
 - **GameTests:** on 1.21.5+ the `/test` framework can automate the eat→score checks.
 
