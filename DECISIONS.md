@@ -17,10 +17,22 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   correct milk behaviour (a milk chug clears them, they return next tick). Long durations
   would be a false economy and let players eat once and coast.
 
-- **Actionbar HUD, not bossbars (for v1).** A per-player bossbar dashboard needs
-  per-player bossbar ids (macros keyed off an assigned integer) and couldn't be verified
-  without a live client this pass. The actionbar readout uses live `score` text components,
-  no macros, and is rock-solid. Bossbar/resource-pack polish is a documented future option.
+- **HUD is a 3-mode cycle: off → bossbars → actionbar** (`/trigger nw.hud`). v1 shipped only
+  the actionbar (rock-solid, no macros) because per-player bossbars need per-player ids;
+  v1.3.0 added the bossbar dashboard. Per-player ids come from an integer counter
+  (`#next nw.id`, assigned once on first join) so bossbar names (`nutriwork:h<id>_<track>`,
+  path-safe) never collide — cleaner than name/UUID-based ids. Bars are macro-updated from
+  the `nw.*` scores each second. The actionbar stays as mode 2 for players who prefer it and
+  as the macro-free fallback. Both are static-validated; the bossbar/macro path is the part
+  most worth a live-client glance.
+
+- **Resource-pack icons are opt-in per player.** The companion pack (`resourcepack/`) adds a
+  custom font of six glyphs (U+E000–E005). A datapack can't detect whether a client applied
+  a pack, and unknown glyphs render as boxes — so icon mode is a per-player flag
+  (`nw.icons`, `hud/icons_on`/`icons_off`) defaulting off, and the default bars use plain,
+  vanilla-safe text labels. Glyph PNGs are code-generated (`tools/GenHudIcons.java`, Java
+  only) rather than hand-drawn; their font alignment is the one thing flagged for a human
+  eye since it can't be verified headless.
 
 - **Incentive over punishment.** Nutriwork withholds buffs and applies only *mild* penalties
   (hidden Weakness when dehydrated, brief Slowness when stuffed). It never deletes items,

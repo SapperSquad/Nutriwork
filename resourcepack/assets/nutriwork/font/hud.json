@@ -1,0 +1,10 @@
+{
+  "providers": [
+    { "type": "bitmap", "file": "nutriwork:font/fruit.png", "ascent": 7, "height": 8, "chars": [""] },
+    { "type": "bitmap", "file": "nutriwork:font/veg.png", "ascent": 7, "height": 8, "chars": [""] },
+    { "type": "bitmap", "file": "nutriwork:font/grain.png", "ascent": 7, "height": 8, "chars": [""] },
+    { "type": "bitmap", "file": "nutriwork:font/meat.png", "ascent": 7, "height": 8, "chars": [""] },
+    { "type": "bitmap", "file": "nutriwork:font/sugar.png", "ascent": 7, "height": 8, "chars": [""] },
+    { "type": "bitmap", "file": "nutriwork:font/water.png", "ascent": 7, "height": 8, "chars": [""] }
+  ]
+}

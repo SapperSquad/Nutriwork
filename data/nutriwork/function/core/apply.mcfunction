@@ -29,5 +29,6 @@ execute if score @s nw.variety matches 4.. run effect give @s minecraft:absorpti
 execute if score @s nw.hydration matches ..15 run effect give @s minecraft:weakness 3 0 true
 execute if score @s nw.hydration matches ..5 run effect give @s minecraft:slowness 3 0 true
 
-# --- HUD ---
-execute if score @s nw.hudon matches 1 run function nutriwork:hud/show
+# --- HUD (1 = bossbars, 2 = actionbar) ---
+execute if score @s nw.hudon matches 1 run function nutriwork:hud/bars_update
+execute if score @s nw.hudon matches 2 run function nutriwork:hud/show

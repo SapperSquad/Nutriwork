@@ -6,9 +6,9 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.2.0 (water bottles), load-clean, awaiting in-game sign-off
+## Status — v1.3.0 (bossbar HUD + resource pack), load-clean, awaiting in-game sign-off
 
-- All 80 data files present; **all JSON parses, no BOM, every cross-reference resolves**
+- All 93 data files present; **all JSON parses, no BOM, every cross-reference resolves**
   (function tags → functions, advancement rewards → functions, `advancement revoke` →
   advancements). Static validation passes.
 - **Not yet confirmed in a running client** — see "How to test" below. Do that once and
@@ -73,7 +73,13 @@ track — expected (re-adding is how load stays idempotent without wiping scores
   `required:false`, absent on vanilla). Included *into* the grant-tags, not via parallel
   advancements, so nothing double-counts. Delete the `compat/` folder to disable. Full
   mapping and the known bounded same-group top-up on modded servers are in `COMPAT.md`.
-- **HUD polish:** optional resource-pack companion with custom glyphs for a nicer bar.
+- **HUD polish — DONE (v1.3.0).** `/trigger nw.hud` now cycles off → bossbars → actionbar.
+  Bossbars are per-player (`nutriwork:h<id>_<track>`, id from `#next nw.id`), macro-updated
+  each second (`hud/bars_update` → `_bars_text_m`). Optional resource pack
+  (`resourcepack/`, zipped to `dist/Nutriwork-HUD-ResourcePack-v1.0.zip`, format 34) adds a
+  custom-font icon per track (U+E000–E005, PNGs from `tools/GenHudIcons.java`); opt in per
+  player with `hud/icons_on`. **The bossbar/macro behaviour and the glyph alignment are the
+  parts most worth eyeballing in a client** — static-validated only so far. See `HUD.md`.
 - **GameTests:** on 1.21.5+ the `/test` framework can automate the eat→score checks.
 
 See `DECISIONS.md` before re-opening any of the choices above. Ship store copy with every

@@ -36,9 +36,13 @@ Buffs refresh continuously while your diet holds and fade a few seconds after it
 
 ## The HUD
 
-Run **`/trigger nw.hud`** to toggle a compact readout of all six tracks above your
-hotbar. **`/function nutriwork:journal`** prints a full breakdown, including which buffs
-you currently qualify for.
+Press **`/trigger nw.hud`** to cycle the HUD through three modes: **off → bossbars →
+actionbar**. The bossbar mode shows six colour-coded bars at the top of the screen, one per
+track, each filling 0–100 with its live value. **`/function nutriwork:journal`** prints a
+full breakdown in chat any time, including which buffs you currently qualify for.
+
+Want food-group icons on the bars instead of words? There's an optional companion resource
+pack — see `HUD.md`.
 
 ## Install
 

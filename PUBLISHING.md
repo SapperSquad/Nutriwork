@@ -27,7 +27,8 @@ volume, always.
 
 - **Six nutrition tracks**, balanced-diet buffs that scale with how varied you eat
 - **Hydration**, over-eating and cuisine-variety systems on top of the classic groups
-- A toggleable **HUD** (`/trigger nw.hud`) and a full **journal** readout
+- A cycling **HUD** (`/trigger nw.hud`): bossbar dashboard or compact actionbar, plus a full
+  **journal** readout — with an optional resource pack for food-group icons
 - **Server-tunable** — every value in one config function, `/reload` to apply
 - **Data-driven foods** — reclassify anything by editing one item tag
 - **Modded-food ready** — reads `c:foods/*` and Pantrywork tags; no-ops on vanilla
@@ -36,6 +37,12 @@ volume, always.
 Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
+
+### v1.3.0 — bossbar HUD + optional icon pack
+- `/trigger nw.hud` now cycles three HUD modes: off → a six-bar bossbar dashboard →
+  the compact actionbar line.
+- Optional companion resource pack adds food-group icons to the bars (opt in with
+  `/function nutriwork:hud/icons_on`; the datapack is fully playable without it).
 
 ### v1.2.0 — water bottles hydrate
 - Drinking a plain water bottle now fills the hydration track, alongside milk, honey,

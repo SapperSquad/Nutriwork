@@ -1,4 +1,5 @@
-# nutriwork:admin/uninstall  — remove all Nutriwork objectives, then delete the datapack
+# nutriwork:admin/uninstall  — remove all Nutriwork bossbars + objectives, then delete the datapack
+execute as @a run function nutriwork:hud/bars_remove
 scoreboard objectives remove nw.fruits
 scoreboard objectives remove nw.veg
 scoreboard objectives remove nw.grains
@@ -18,4 +19,6 @@ scoreboard objectives remove nw.fr_grain
 scoreboard objectives remove nw.fr_protein
 scoreboard objectives remove nw.fr_sugar
 scoreboard objectives remove nw.hud
+scoreboard objectives remove nw.id
+scoreboard objectives remove nw.icons
 tellraw @a [{"text":"[Nutriwork] ","color":"yellow","bold":true},{"text":"Uninstalled. You can now remove the datapack and /reload.","color":"gray","bold":false}]
