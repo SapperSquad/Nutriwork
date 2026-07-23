@@ -84,6 +84,14 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   fruit/veg tags would lose most modded fruit/veg coverage — a far bigger loss than a few
   points on a vanilla potato. Details in `COMPAT.md`.
 
+- **Six bossbars, accepting the vanilla top-third cap.** In-game testing (2026-07-23)
+  confirmed the client only renders bossbars in the top third of the GUI
+  (`BossHealthOverlay`: stops at `j >= guiHeight()/3`). Six bars fit at GUI Scale ≤ 2 or in
+  a tall window, but the bottom one or two (Sugar, Water) clip at high GUI scale / small
+  windows. Kept six bars (the full dashboard is the point) rather than dropping tracks; the
+  actionbar HUD mode shows all six on one line regardless and is the documented fallback for
+  clipped setups. All six bars always exist and update — clipping is display-only.
+
 - **Objective creation is idempotent-by-tolerance.** `core/load` re-adds objectives every
   `/reload`, which logs a harmless "already exists". Accepted deliberately — removing and
   re-adding would wipe player scores.

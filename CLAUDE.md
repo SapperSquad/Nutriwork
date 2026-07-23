@@ -6,15 +6,22 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.3.0 (bossbar HUD + resource pack), load-clean, awaiting in-game sign-off
+## Status — v1.3.0 (bossbar HUD + resource pack), load-clean, IN-GAME VERIFIED 2026-07-23
 
 - All 93 data files present; **all JSON parses, no BOM, every cross-reference resolves**
   (function tags → functions, advancement rewards → functions, `advancement revoke` →
   advancements). Static validation passes.
-- **Not yet confirmed in a running client** — see "How to test" below. Do that once and
-  tick this off. The one API worth watching on first load is the `consume_item`
-  advancement item predicate (`item.items: "#tag"`, the post-1.20.5 form); if a
-  consume-advancement never fires, that's the thing to check.
+- **Verified in a running 1.21.1 client** (loaded in a NeoForge dev world): pack loads
+  clean, player init + bootstrap fire, all six bossbars render with correct
+  colours/labels/values and progress fill, decay ticks down at the configured rates, and
+  `admin/uninstall` removes the bars + objectives. The `consume_item` predicate and the
+  bossbar macros all work.
+- **Found: the vanilla top-third bossbar cap.** `BossHealthOverlay.render()` stops drawing
+  once `j >= guiHeight()/3`, so bossbars only fill the top third of the GUI. With six bars
+  the last one or two (Sugar, Water) **clip at high GUI scale / small windows**; at GUI
+  Scale ≤ 2 (or a tall window) all six show. Not a datapack bug — all six exist and update,
+  and the actionbar HUD (mode 2) shows all six regardless. See `DECISIONS.md`/`HUD.md` and
+  [[mc-bossbar-render-cap]] in memory.
 
 ## How it works
 

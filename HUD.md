@@ -11,6 +11,12 @@ Nutriwork can show your nutrition three ways. Cycle them with **`/trigger nw.hud
 **`/function nutriwork:journal`** prints the full breakdown in chat any time, including which
 buffs you currently qualify for.
 
+**Only seeing four or five bars?** Minecraft only draws bossbars in the top third of the
+screen, so at a high GUI Scale (or in a small window) the bottom bars (Sugar, Water) get cut
+off — they still exist and update, they're just not drawn. Lower your **GUI Scale to 2** (or
+smaller) in Options → Video Settings to fit all six, or press `/trigger nw.hud` again to
+switch to the **actionbar** mode, which shows all six on one line at any scale.
+
 ## How the bossbars work (for pack authors)
 
 Each player gets six bossbars named `nutriwork:h<id>_<track>`, where `<id>` is a small
