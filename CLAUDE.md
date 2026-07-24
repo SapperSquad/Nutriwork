@@ -12,7 +12,9 @@ by **SapperSquad**. There is a dedicated `nutriwork` build agent at
   `nw.cov`/`nw.variety` to `nw.cov_p`/`nw.var_p`, announces only on the way up) and
   **per-bar on/off toggles** (`hud/bar/<track>` → `nw.b_<track>`, unset counts as shown so
   reloads/updates don't hide existing players' bars; `hud/bars_setvis` replaces the old
-  bars_show/bars_hide).
+  bars_show/bars_hide). Plus an in-game **Nutrition Guide** written book (`book.mcfunction`,
+  given on first join and via `/function nutriwork:book`) — its `written_book_content` SNBT
+  was built against verified 1.21.1 source, with `\\n` page newlines.
 - All 99 data files present; **all JSON parses, no BOM, every cross-reference resolves**
   (function tags → functions, advancement rewards → functions, `advancement revoke` →
   advancements). Static validation passes.

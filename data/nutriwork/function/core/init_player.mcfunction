@@ -23,4 +23,5 @@ scoreboard players set @s nw.b_sugar 1
 scoreboard players set @s nw.b_water 1
 execute unless score @s nw.id = @s nw.id run function nutriwork:hud/assign_id
 scoreboard players enable @s nw.hud
+function nutriwork:book
 tellraw @s [{"text":"[Nutriwork] ","color":"green","bold":true},{"text":"Nutrition tracking active. ","color":"gray","bold":false},{"text":"/trigger nw.hud","color":"yellow"},{"text":" toggles the HUD; ","color":"gray"},{"text":"/function nutriwork:journal","color":"yellow"},{"text":" shows details.","color":"gray"}]

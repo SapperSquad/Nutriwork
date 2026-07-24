@@ -43,11 +43,14 @@ Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
 
-### v1.4.0 — buff notifications + adjustable bars
+### v1.4.0 — buff notifications, adjustable bars, in-game guide
 - On-screen text now announces each buff the moment you earn it (Regeneration, Resistance,
   Haste, Well-Fed) — once, on the way up, never spammy.
 - Each HUD bar can be toggled on/off per player (`/function nutriwork:hud/bar/<track>`), so
   you can trim the dashboard to the tracks you care about and dodge the top-third clip.
+- New players receive a **Nutrition Guide** book explaining the six groups, the buffs and
+  their thresholds, hydration, decay and the commands — grab a copy any time with
+  `/function nutriwork:book`.
 
 ### v1.3.0 — bossbar HUD + optional icon pack
 - `/trigger nw.hud` now cycles three HUD modes: off → a six-bar bossbar dashboard →

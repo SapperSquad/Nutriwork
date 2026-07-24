@@ -7,6 +7,9 @@ you earn passive buffs; live on cookies alone and you won't.
 Inspired by the **Diet** mod, rebuilt with commands so it runs on any vanilla 1.21 / 1.21.1
 world or server.
 
+New to it? You start with a **Nutrition Guide** book that explains the groups, buffs and
+commands — or run `/function nutriwork:book` any time for a copy.
+
 ## The six tracks
 
 Every food you eat feeds one or more of six tracks (0–100):
