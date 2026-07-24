@@ -21,4 +21,12 @@ scoreboard objectives remove nw.fr_sugar
 scoreboard objectives remove nw.hud
 scoreboard objectives remove nw.id
 scoreboard objectives remove nw.icons
+scoreboard objectives remove nw.cov_p
+scoreboard objectives remove nw.var_p
+scoreboard objectives remove nw.b_fruit
+scoreboard objectives remove nw.b_veg
+scoreboard objectives remove nw.b_grain
+scoreboard objectives remove nw.b_meat
+scoreboard objectives remove nw.b_sugar
+scoreboard objectives remove nw.b_water
 tellraw @a [{"text":"[Nutriwork] ","color":"yellow","bold":true},{"text":"Uninstalled. You can now remove the datapack and /reload.","color":"gray","bold":false}]

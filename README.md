@@ -41,6 +41,10 @@ actionbar**. The bossbar mode shows six colour-coded bars at the top of the scre
 track, each filling 0–100 with its live value. **`/function nutriwork:journal`** prints a
 full breakdown in chat any time, including which buffs you currently qualify for.
 
+Don't want all six bars? Toggle any of them on/off with
+`/function nutriwork:hud/bar/<track>` (fruit/veg/grain/meat/sugar/water). And when you
+*earn* a buff, a one-time message tells you which one.
+
 Want food-group icons on the bars instead of words? There's an optional companion resource
 pack — see `HUD.md`.
 

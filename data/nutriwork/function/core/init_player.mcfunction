@@ -13,6 +13,14 @@ scoreboard players set @s nw.fr_grain 0
 scoreboard players set @s nw.fr_protein 0
 scoreboard players set @s nw.fr_sugar 0
 scoreboard players set @s nw.icons 0
+scoreboard players set @s nw.cov_p 9
+scoreboard players set @s nw.var_p 9
+scoreboard players set @s nw.b_fruit 1
+scoreboard players set @s nw.b_veg 1
+scoreboard players set @s nw.b_grain 1
+scoreboard players set @s nw.b_meat 1
+scoreboard players set @s nw.b_sugar 1
+scoreboard players set @s nw.b_water 1
 execute unless score @s nw.id = @s nw.id run function nutriwork:hud/assign_id
 scoreboard players enable @s nw.hud
 tellraw @s [{"text":"[Nutriwork] ","color":"green","bold":true},{"text":"Nutrition tracking active. ","color":"gray","bold":false},{"text":"/trigger nw.hud","color":"yellow"},{"text":" toggles the HUD; ","color":"gray"},{"text":"/function nutriwork:journal","color":"yellow"},{"text":" shows details.","color":"gray"}]

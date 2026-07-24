@@ -22,6 +22,14 @@ scoreboard objectives add nw.fr_sugar dummy
 scoreboard objectives add nw.hud trigger
 scoreboard objectives add nw.id dummy
 scoreboard objectives add nw.icons dummy
+scoreboard objectives add nw.cov_p dummy
+scoreboard objectives add nw.var_p dummy
+scoreboard objectives add nw.b_fruit dummy
+scoreboard objectives add nw.b_veg dummy
+scoreboard objectives add nw.b_grain dummy
+scoreboard objectives add nw.b_meat dummy
+scoreboard objectives add nw.b_sugar dummy
+scoreboard objectives add nw.b_water dummy
 
 function nutriwork:config/defaults
 scoreboard players add #next nw.id 0

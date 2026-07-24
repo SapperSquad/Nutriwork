@@ -92,6 +92,19 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   actionbar HUD mode shows all six on one line regardless and is the documented fallback for
   clipped setups. All six bars always exist and update — clipping is display-only.
 
+- **Buff-earned text is edge-triggered, gains only** (v1.4.0). `core/notify` compares this
+  second's coverage/variety to last second's (`nw.cov_p`/`nw.var_p`) and announces only on
+  the way up, so it never repeats while you stay fed. Shown in chat (not the actionbar) so it
+  doesn't fight the HUD. Alex chose gains-only (no "you lost X" messages). Prev-scores start
+  high (9) so joining with a decent diet isn't announced as "earning."
+
+- **Per-bar toggles treat unset as shown** (v1.4.0). Each bar has an `nw.b_<track>` flag;
+  `bars_setvis` shows a bar unless its flag is explicitly 0. Unset = shown means a `/reload`
+  or a pack update never hides an already-joined player's bars (init only runs for new
+  players). Replaced the old all-on/all-off `bars_show`/`bars_hide` with the flag-aware
+  `bars_setvis`. This is the "adjustable HUD" — vanilla fixes bar *position*, so we make
+  *which* bars show adjustable instead.
+
 - **Objective creation is idempotent-by-tolerance.** `core/load` re-adds objectives every
   `/reload`, which logs a harmless "already exists". Accepted deliberately — removing and
   re-adding would wipe player scores.

@@ -32,3 +32,6 @@ execute if score @s nw.hydration matches ..5 run effect give @s minecraft:slowne
 # --- HUD (1 = bossbars, 2 = actionbar) ---
 execute if score @s nw.hudon matches 1 run function nutriwork:hud/bars_update
 execute if score @s nw.hudon matches 2 run function nutriwork:hud/show
+
+# --- buff-earned notifications (edge-triggered) ---
+function nutriwork:core/notify

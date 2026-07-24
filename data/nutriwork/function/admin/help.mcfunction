@@ -2,6 +2,7 @@
 tellraw @s [{"text":"── Nutriwork commands ──","color":"gold","bold":true}]
 tellraw @s [{"text":"/trigger nw.hud","color":"yellow"},{"text":"  cycle HUD: off / bossbars / actionbar","color":"gray"}]
 tellraw @s [{"text":"/function nutriwork:hud/icons_on","color":"yellow"},{"text":"  food-group icons on the bars (needs the HUD resource pack)","color":"gray"}]
+tellraw @s [{"text":"/function nutriwork:hud/bar/<track>","color":"yellow"},{"text":"  show/hide one bar: fruit veg grain meat sugar water","color":"gray"}]
 tellraw @s [{"text":"/function nutriwork:journal","color":"yellow"},{"text":"  show your nutrition","color":"gray"}]
 tellraw @s [{"text":"/function nutriwork:admin/fill","color":"yellow"},{"text":"  fill all tracks (test)","color":"gray"}]
 tellraw @s [{"text":"/function nutriwork:admin/clear","color":"yellow"},{"text":"  empty all tracks (test)","color":"gray"}]

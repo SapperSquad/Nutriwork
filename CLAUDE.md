@@ -6,9 +6,14 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.3.0 (bossbar HUD + resource pack), load-clean, IN-GAME VERIFIED 2026-07-23
+## Status — v1.4.0 (buff notifications + adjustable bars), load-clean, core IN-GAME VERIFIED 2026-07-23
 
-- All 93 data files present; **all JSON parses, no BOM, every cross-reference resolves**
+- v1.4.0 additions: **edge-triggered buff-earned text** (`core/notify`, compares
+  `nw.cov`/`nw.variety` to `nw.cov_p`/`nw.var_p`, announces only on the way up) and
+  **per-bar on/off toggles** (`hud/bar/<track>` → `nw.b_<track>`, unset counts as shown so
+  reloads/updates don't hide existing players' bars; `hud/bars_setvis` replaces the old
+  bars_show/bars_hide).
+- All 99 data files present; **all JSON parses, no BOM, every cross-reference resolves**
   (function tags → functions, advancement rewards → functions, `advancement revoke` →
   advancements). Static validation passes.
 - **Verified in a running 1.21.1 client** (loaded in a NeoForge dev world): pack loads

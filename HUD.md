@@ -9,7 +9,19 @@ Nutriwork can show your nutrition three ways. Cycle them with **`/trigger nw.hud
 3. **Actionbar** — one compact line above the hotbar with all six numbers.
 
 **`/function nutriwork:journal`** prints the full breakdown in chat any time, including which
-buffs you currently qualify for.
+buffs you currently qualify for. And when you actually **earn** a buff (cross into
+Regeneration, Resistance, Haste or Well-Fed), a one-time line tells you which — only on the
+way up, so it never spams.
+
+## Choosing which bars show
+
+Don't want all six? Toggle any bar on or off, per player:
+
+    /function nutriwork:hud/bar/fruit     (or veg / grain / meat / sugar / water)
+
+Chat confirms "shown"/"hidden". Hiding a couple (say Sugar + Water) keeps the rest fitting
+cleanly at any GUI scale — the tracks still update in the background, they're just not drawn.
+(Vanilla fixes *where* bossbars appear, so this controls *which* show, not their position.)
 
 **Only seeing four or five bars?** Minecraft only draws bossbars in the top third of the
 screen, so at a high GUI Scale (or in a small window) the bottom bars (Sugar, Water) get cut

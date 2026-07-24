@@ -3,7 +3,7 @@
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
 
-Release file: `Nutriwork-v1.3.0.zip` (built by `tools/build-release.ps1`) bundles the
+Release file: `Nutriwork-v1.4.0.zip` (built by `tools/build-release.ps1`) bundles the
 **datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
 `Nutriwork-Datapack-v1.3.0.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
 if a store prefers separate uploads.
@@ -42,6 +42,12 @@ volume, always.
 Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
+
+### v1.4.0 — buff notifications + adjustable bars
+- On-screen text now announces each buff the moment you earn it (Regeneration, Resistance,
+  Haste, Well-Fed) — once, on the way up, never spammy.
+- Each HUD bar can be toggled on/off per player (`/function nutriwork:hud/bar/<track>`), so
+  you can trim the dashboard to the tracks you care about and dodge the top-third clip.
 
 ### v1.3.0 — bossbar HUD + optional icon pack
 - `/trigger nw.hud` now cycles three HUD modes: off → a six-bar bossbar dashboard →
