@@ -43,6 +43,15 @@ Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
 
+### v1.4.1 — critical fix: eating now actually feeds your diet
+- **Fixed:** every food's reward function failed to load (an `advancement revoke` was
+  missing its required mode keyword), so eating never added to your nutrition tracks.
+  All 17 are fixed. **This is the fix that makes the pack work as intended.**
+- Upgrading from an earlier version? Run `/function nutriwork:admin/rearm` once — it
+  clears eat-detection that got stuck while the bug was live.
+- Guide book split into shorter pages so no page overflows, and it now uses a custom book
+  model (with the resource pack applied).
+
 ### v1.4.0 — buff notifications, adjustable bars, in-game guide
 - On-screen text now announces each buff the moment you earn it (Regeneration, Resistance,
   Haste, Well-Fed) — once, on the way up, never spammy.

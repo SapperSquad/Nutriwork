@@ -55,7 +55,7 @@ scoreboard players operation @s $obj += $val nw.const
 execute if score @s $obj matches 101.. run scoreboard players set @s $obj 100
 scoreboard players operation @s $fr = #window nw.const
 function nutriwork:core/after_eat
-advancement revoke @s nutriwork:eat/$name
+advancement revoke @s only nutriwork:eat/$name
 "@
   Write-NoBom "$root\data\nutriwork\function\eat\$name.mcfunction" $fn
 }

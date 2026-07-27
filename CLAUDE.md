@@ -6,7 +6,20 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.4.0 (buff notifications + adjustable bars), load-clean, core IN-GAME VERIFIED 2026-07-23
+## Status — v1.4.1 (critical eat fix), load-clean
+
+> **The bug that mattered (v1.0–v1.4.0):** every `eat/*` function failed to load because
+> `advancement revoke @s <id>` is invalid — the parser **requires** a mode keyword
+> (`only`/`everything`/`from`/`through`/`until`, verified in `AdvancementCommands`). So
+> **eating never granted nutrition** for four versions. It hid because every test used
+> `admin/fill`, which sets scores directly and skips the eat path, and because static
+> validation checked that advancement *references* resolved but never the *command syntax*.
+> Fixed in all 17 eat functions + `tools/scaffold.ps1`; `tools/validate.ps1` now fails the
+> build on a missing mode keyword. **Lesson: exercise the real path, don't test only the
+> admin shortcut.** Upgraders run `/function nutriwork:admin/rearm` once (clears advancements
+> left stuck "granted" while the bug was live).
+
+## Prior status — v1.4.0, core IN-GAME VERIFIED 2026-07-23
 
 - v1.4.0 additions: **edge-triggered buff-earned text** (`core/notify`, compares
   `nw.cov`/`nw.variety` to `nw.cov_p`/`nw.var_p`, announces only on the way up) and

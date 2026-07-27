@@ -7,7 +7,7 @@
 
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
-$ver  = '1.4.0'          # datapack / release version
+$ver  = '1.4.1'          # datapack / release version
 $rpver = '1.0'           # resource pack version
 
 $dist  = Join-Path $root 'dist'
