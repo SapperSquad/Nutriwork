@@ -35,3 +35,7 @@ function nutriwork:config/defaults
 scoreboard players add #next nw.id 0
 scoreboard players enable @a nw.hud
 tellraw @a [{"text":"[Nutriwork] ","color":"green","bold":true},{"text":"loaded — eat a balanced diet for buffs. Use ","color":"gray","bold":false},{"text":"/trigger nw.hud","color":"yellow"},{"text":" for the HUD.","color":"gray"}]
+
+# Self-heal: clear any eat-advancement left stuck 'granted' (e.g. by the pre-1.4.1 bug
+# where reward functions failed to load and never revoked). Harmless when nothing is stuck.
+function nutriwork:core/repair
