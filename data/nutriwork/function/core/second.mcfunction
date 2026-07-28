@@ -1,6 +1,9 @@
 # nutriwork:core/second  — ~once per second
 scoreboard players set #t nw.timer 0
 
+# re-arm eat detection once per player (must be here, not in load - see repair_player)
+execute as @a unless score @s nw.fixver matches 1 run function nutriwork:core/repair_player
+
 # onboard any player who hasn't been initialised yet
 execute as @a unless score @s nw.joined matches 1 run function nutriwork:core/init_player
 
