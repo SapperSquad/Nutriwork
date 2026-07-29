@@ -2,8 +2,8 @@
 
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
-License: **All Rights Reserved** (see README) - personal use only, no redistribution or
-modpack inclusion without permission. Set this in the Modrinth/CurseForge project settings.
+License: **MIT** (see LICENSE) - Alex's call 2026-07-28, reversing the brief ARR policy
+from the same day. Set MIT in the Modrinth/CurseForge project settings.
 
 Release file: `Nutriwork-v1.5.1.zip` (built by `tools/build-release.ps1`) bundles the
 **datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
