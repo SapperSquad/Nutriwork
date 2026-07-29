@@ -3,7 +3,7 @@
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
 
-Release file: `Nutriwork-v1.4.0.zip` (built by `tools/build-release.ps1`) bundles the
+Release file: `Nutriwork-v1.5.0.zip` (built by `tools/build-release.ps1`) bundles the
 **datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
 `Nutriwork-Datapack-v1.3.0.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
 if a store prefers separate uploads.
@@ -42,6 +42,16 @@ volume, always.
 Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
+
+### v1.5.0 — balance pass: nutrition now lasts
+- **Decay slowed to a sane pace.** Food drains 1/min (was 4) and water 2/min (was 6). A
+  balanced meal now keeps you buffed for roughly 2½ in-game days instead of demanding
+  a dozen-plus items per day. One steak = ~2 days of protein; one drink = ~15 minutes.
+- **Sugar is reachable early.** Sweet berries, glow berries and melon now count toward
+  Sugar, so you no longer need a bakery to complete a balanced diet (and to reach Haste).
+- **Filled the unreachable tiers.** `sugar_high` (honey bottle, enchanted golden apple)
+  and `grain_high` (pumpkin pie) had no foods at all — every tier is now attainable.
+- Cuisine-variety window widened 3 → 5 minutes so Well-Fed fits a normal meal.
 
 ### v1.4.1 — critical fix: eating now actually feeds your diet
 - **Fixed:** every food's reward function failed to load (an `advancement revoke` was

@@ -6,7 +6,16 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.4.1 (critical eat fix), load-clean
+## Status — v1.5.0 (balance pass), load-clean, IN-GAME VERIFIED
+
+- **All six groups confirmed rising on eat** (Alex, 2026-07-27) after the v1.4.1 fixes below.
+- v1.5.0: decay retuned by `value / decay` = minutes-of-play per food (food 4→1/min, water
+  6→2/min — a steak was worth 10 min, now 40); **Sugar reachable early** via berries/melon;
+  filled `sugar_high` + `grain_high`, which shipped empty (reachable in code, unreachable in
+  play). **Cake permanently excluded** — block interaction, never fires `consume_item`.
+  Reasoning in `DECISIONS.md`.
+
+## Prior status — v1.4.1 (critical eat fix)
 
 > **The bug that mattered (v1.0–v1.4.0):** every `eat/*` function failed to load because
 > `advancement revoke @s <id>` is invalid — the parser **requires** a mode keyword

@@ -20,7 +20,7 @@ Every food you eat feeds one or more of six tracks (0–100):
 | 🥕 **Veg** | carrot, potato, baked potato, beetroot, dried kelp |
 | 🌾 **Grain** | bread, cookie, pumpkin pie |
 | 🍖 **Meat / Protein** | cooked & raw meats and fish, stews |
-| 🍬 **Sugar** | cookie, pumpkin pie, honey bottle |
+| 🍬 **Sugar** | sweet/glow berries, melon, cookie, pumpkin pie, golden apple, honey |
 | 💧 **Water** | water bottles, milk, honey, soups, juicy fruits |
 
 Cooked foods and "golden" foods are worth more than raw. Some foods count twice — a

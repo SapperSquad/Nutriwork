@@ -105,6 +105,29 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   `bars_setvis`. This is the "adjustable HUD" — vanilla fixes bar *position*, so we make
   *which* bars show adjustable instead.
 
+- **Decay is tuned by "minutes of play per food", not by feel** (v1.5.0). The number that
+  matters is `value / decay`. At the original decay 4/min a cookie was worth 3 minutes and a
+  steak 10, so holding five groups above 50 needed ~16 items per in-game day — nutrition
+  became a chore. Now food decays 1/min and water 2/min: low/med/high foods buy 12/25/40
+  minutes and a drink 15, so one balanced meal holds the buffs ~2½ in-game days. Water
+  decays faster than food on purpose. Middle setting if it ever feels too lenient:
+  `decay_food 2`.
+
+- **Sugar must be reachable without a bakery** (v1.5.0). Sugar originally came only from
+  cookie / pumpkin pie / honey bottle, so a player who doesn't bake could never fill it —
+  which also made the 5-group Haste buff nearly unattainable. Sweet berries, glow berries and
+  melon now count as `sugar_low`, making Sugar an early-game track. Foods deliberately sit in
+  several tags (melon = fruit + sugar + water); one bite still grants each group once.
+
+- **No cake, ever — it cannot work.** Cake is the obvious `sugar_high` candidate but
+  `CakeBlock` feeds the player directly as a block interaction and never consumes an
+  ItemStack, so `minecraft:consume_item` never fires. Verified in 1.21.1 source. Any cake
+  entry would be a silent dead tag. Same caution applies to any future "eat the block" food.
+
+- **Every tier must contain something** (v1.5.0). `sugar_high` and `grain_high` shipped empty
+  for five versions — reachable in the code, unreachable in play. `tools/validate.ps1` now
+  reports item counts per tier so an empty one is visible.
+
 - **Objective creation is idempotent-by-tolerance.** `core/load` re-adds objectives every
   `/reload`, which logs a harmless "already exists". Accepted deliberately — removing and
   re-adding would wipe player scores.
