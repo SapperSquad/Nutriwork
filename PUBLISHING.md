@@ -3,9 +3,9 @@
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
 
-Release file: `Nutriwork-v1.5.0.zip` (built by `tools/build-release.ps1`) bundles the
+Release file: `Nutriwork-v1.5.1.zip` (built by `tools/build-release.ps1`) bundles the
 **datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
-`Nutriwork-Datapack-v1.3.0.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
+`Nutriwork-Datapack-v1.5.1.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
 if a store prefers separate uploads.
 
 ## Tagline
@@ -42,6 +42,13 @@ volume, always.
 Runs anywhere vanilla does. Made by SapperSquad.
 
 ## Changelog
+
+### v1.5.1 - test coverage + modded compat verified
+- Added an in-game smoke test (/function nutriwork:test/smoke) that proves eating works on
+  every track; run it before every release.
+- **Modded compat verified for the first time** against Farmer's Delight, Croptopia, Pam's
+  HarvestCraft, Ocean's Delight and End's Delight - 12/12 checks pass.
+- Fixed: exotic raw meats (dragon, endermite, shulker) matched no tag and granted nothing.
 
 ### v1.5.0 — balance pass: nutrition now lasts
 - **Decay slowed to a sane pace.** Food drains 1/min (was 4) and water 2/min (was 6). A

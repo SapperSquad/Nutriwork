@@ -1,0 +1,46 @@
+say ===NUTRIWORK MODDED TAG TEST===
+forceload add 0 0 16 16
+setblock 8 -60 8 minecraft:chest replace
+say --- FARMERS DELIGHT ---
+item replace block 8 -60 8 container.0 with farmersdelight:cooked_bacon
+execute if items block 8 -60 8 container.0 #nutriwork:grant/protein_med run say PASS fd:cooked_bacon -> protein_med
+execute unless items block 8 -60 8 container.0 #nutriwork:grant/protein_med run say FAIL fd:cooked_bacon NOT in protein_med
+item replace block 8 -60 8 container.1 with farmersdelight:bacon
+execute if items block 8 -60 8 container.1 #nutriwork:grant/protein_low run say PASS fd:bacon -> protein_low
+execute unless items block 8 -60 8 container.1 #nutriwork:grant/protein_low run say FAIL fd:bacon NOT in protein_low
+item replace block 8 -60 8 container.2 with farmersdelight:cabbage
+execute if items block 8 -60 8 container.2 #nutriwork:grant/veg_med run say PASS fd:cabbage -> veg_med
+execute unless items block 8 -60 8 container.2 #nutriwork:grant/veg_med run say FAIL fd:cabbage NOT in veg_med
+item replace block 8 -60 8 container.3 with farmersdelight:tomato
+execute if items block 8 -60 8 container.3 #nutriwork:grant/veg_med run say PASS fd:tomato -> veg_med
+execute unless items block 8 -60 8 container.3 #nutriwork:grant/veg_med run say FAIL fd:tomato NOT in veg_med
+say --- CROPTOPIA ---
+item replace block 8 -60 8 container.4 with croptopia:strawberry
+execute if items block 8 -60 8 container.4 #nutriwork:grant/fruit_med run say PASS croptopia:strawberry -> fruit_med
+execute unless items block 8 -60 8 container.4 #nutriwork:grant/fruit_med run say FAIL croptopia:strawberry NOT in fruit_med
+item replace block 8 -60 8 container.5 with croptopia:cabbage
+execute if items block 8 -60 8 container.5 #nutriwork:grant/veg_med run say PASS croptopia:cabbage -> veg_med
+execute unless items block 8 -60 8 container.5 #nutriwork:grant/veg_med run say FAIL croptopia:cabbage NOT in veg_med
+say --- PAMS HARVESTCRAFT ---
+item replace block 8 -60 8 container.6 with pamhc2foodcore:freshmilkitem
+execute if items block 8 -60 8 container.6 #nutriwork:water run say PASS pams:freshmilk -> water
+execute unless items block 8 -60 8 container.6 #nutriwork:water run say FAIL pams:freshmilk NOT in water
+say --- OCEANS DELIGHT ---
+item replace block 8 -60 8 container.7 with oceansdelight:cooked_guardian_tail
+execute if items block 8 -60 8 container.7 #nutriwork:grant/protein_med run say PASS oceans:cooked_guardian_tail -> protein_med
+execute unless items block 8 -60 8 container.7 #nutriwork:grant/protein_med run say FAIL oceans:cooked_guardian_tail NOT in protein_med
+say --- ENDS DELIGHT ---
+item replace block 8 -60 8 container.10 with ends_delight:roasted_dragon_meat
+execute if items block 8 -60 8 container.10 #nutriwork:grant/protein_med run say PASS ends:roasted_dragon_meat -> protein_med
+execute unless items block 8 -60 8 container.10 #nutriwork:grant/protein_med run say FAIL ends:roasted_dragon_meat NOT in protein_med
+item replace block 8 -60 8 container.11 with ends_delight:raw_dragon_meat
+execute if items block 8 -60 8 container.11 #nutriwork:grant/protein_low run say PASS ends:raw_dragon_meat -> protein_low
+execute unless items block 8 -60 8 container.11 #nutriwork:grant/protein_low run say FAIL ends:raw_dragon_meat NOT in protein_low
+say --- VANILLA CONTROL (must always pass) ---
+item replace block 8 -60 8 container.8 with minecraft:cooked_beef
+execute if items block 8 -60 8 container.8 #nutriwork:grant/protein_high run say PASS vanilla:cooked_beef -> protein_high
+execute unless items block 8 -60 8 container.8 #nutriwork:grant/protein_high run say FAIL vanilla:cooked_beef NOT in protein_high
+item replace block 8 -60 8 container.9 with minecraft:sweet_berries
+execute if items block 8 -60 8 container.9 #nutriwork:grant/sugar_low run say PASS vanilla:sweet_berries -> sugar_low
+execute unless items block 8 -60 8 container.9 #nutriwork:grant/sugar_low run say FAIL vanilla:sweet_berries NOT in sugar_low
+say ===TEST COMPLETE===

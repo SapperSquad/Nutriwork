@@ -95,6 +95,20 @@ server-facing surface.
 Known harmless quirk: on `/reload` the console prints "objective already exists" for each
 track — expected (re-adding is how load stays idempotent without wiping scores).
 
+## Release checks (do BOTH — this is the process that was missing)
+
+1. **Static:** `powershell -File tools\validate.ps1` — JSON/BOM, reference resolution,
+   the `advancement grant|revoke` mode-keyword trap, and empty grant tiers.
+2. **In-game:** load the pack in a world and run **`/function nutriwork:test/smoke`**.
+   It grants each of the 17 consume advancements, which fires the real reward function, and
+   asserts the right points landed on the right track. Prints `SMOKE TEST PASSED/FAILED`.
+   **This is the check that would have caught the v1.0–v1.4.0 "eating does nothing" bug** —
+   `admin/fill` sets scores directly and never exercises the real path, which is exactly why
+   it hid for four versions.
+3. **Modded (optional, when touching compat):** `tools/modded-tagtest.txt` run against
+   Pantrywork's dev server via its RCON harness — proves modded foods land in the right
+   grant tags. See `COMPAT.md`.
+
 ## Building a release
 
 `powershell -File tools\build-release.ps1` (re)builds `dist/`:

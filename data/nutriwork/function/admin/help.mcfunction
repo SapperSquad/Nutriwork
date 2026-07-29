@@ -9,3 +9,4 @@ tellraw @s [{"text":"/function nutriwork:admin/fill","color":"yellow"},{"text":"
 tellraw @s [{"text":"/function nutriwork:admin/clear","color":"yellow"},{"text":"  empty all tracks (test)","color":"gray"}]
 tellraw @s [{"text":"/function nutriwork:admin/reset","color":"yellow"},{"text":"  reset to defaults","color":"gray"}]
 tellraw @s [{"text":"/function nutriwork:admin/uninstall","color":"yellow"},{"text":"  remove Nutriwork's data","color":"gray"}]
+tellraw @s [{"text":"/function nutriwork:test/smoke","color":"yellow"},{"text":"  RELEASE CHECK: proves eating works on every track","color":"gray"}]

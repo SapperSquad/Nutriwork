@@ -67,6 +67,30 @@ the broad fruit/veg tags would lose most modded fruit/veg coverage (Croptopia al
 hundreds). Worth far more than trimming a few points off a vanilla potato. See
 `DECISIONS.md`.
 
+## Verified working (2026-07-28)
+
+Run headless against Pantrywork's dev server (all compat mods loaded) with
+`tools/modded-tagtest.txt` via its RCON harness — see `CLAUDE.md` "Release checks".
+**12/12 passed**, proving modded foods land in the right grant tags:
+
+| Mod | Item | Lands in |
+|---|---|---|
+| Farmer's Delight | cooked_bacon / bacon | protein_med / protein_low |
+| Farmer's Delight | cabbage, tomato | veg_med |
+| Croptopia | strawberry / cabbage | fruit_med / veg_med |
+| Pam's HarvestCraft | fresh milk | water |
+| Ocean's Delight | cooked_guardian_tail | protein_med |
+| End's Delight | roasted / raw dragon meat | protein_med / protein_low |
+| *vanilla control* | cooked_beef, sweet_berries | protein_high, sugar_low |
+
+That test found a real gap: dropping the broad `#c:foods/raw_meat` parent (to stop
+double-counting) meant **exotic raw meats** — dragon, endermite, shulker — matched nothing.
+They now have explicit species entries in `compat/protein_low`.
+
+**Known upstream gap (not ours):** some Ocean's Delight dishes, e.g.
+`oceansdelight:cooked_stuffed_cod`, aren't classified by Pantrywork, so nothing routes them.
+Fixing that belongs in Pantrywork's `c:foods/cooked_fish`.
+
 ## Adding another mod
 
 If a mod already follows the `c:foods/*` convention (most modern food mods do, and

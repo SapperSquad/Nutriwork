@@ -60,6 +60,22 @@ foreach ($fn in $fns) {
   }
 }
 
+# --- every grant tier must contain at least one real item ---
+# sugar_high and grain_high shipped EMPTY for five versions: the tier existed and was
+# reachable in code, but no food on earth could fill it. A compat-only tier is allowed
+# (modded items may populate it), but a tier with neither vanilla items nor a compat ref
+# is dead weight and a balance bug.
+foreach ($g in Get-ChildItem "$root\data\nutriwork\tags\item\grant" -Filter *.json -ErrorAction SilentlyContinue) {
+  $vals = ([IO.File]::ReadAllText($g.FullName,[Text.Encoding]::UTF8) | ConvertFrom-Json).values
+  $items  = @($vals | Where-Object { $_ -is [string] })
+  $compat = @($vals | Where-Object { $_ -isnot [string] })
+  if ($items.Count -eq 0 -and $compat.Count -eq 0) {
+    $errors.Add("EMPTY TIER: grant/$($g.BaseName) has no foods - unreachable in play")
+  } elseif ($items.Count -eq 0) {
+    Write-Host ("  note: grant/{0} has no vanilla items (modded-only tier)" -f $g.BaseName) -ForegroundColor Yellow
+  }
+}
+
 Write-Host ("files: {0} json, {1} functions" -f $json.Count, $fns.Count)
 if ($errors.Count -eq 0) { Write-Host "VALIDATION: PASS" -ForegroundColor Green; exit 0 }
 else { Write-Host "VALIDATION: $($errors.Count) ISSUE(S)" -ForegroundColor Red; $errors | ForEach-Object { Write-Host " - $_" }; exit 1 }
