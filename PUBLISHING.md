@@ -2,7 +2,7 @@
 
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
-License: **All Rights Reserved** (see LICENSE) - personal use only, no redistribution or
+License: **All Rights Reserved** (see README) - personal use only, no redistribution or
 modpack inclusion without permission. Set this in the Modrinth/CurseForge project settings.
 
 Release file: `Nutriwork-v1.5.1.zip` (built by `tools/build-release.ps1`) bundles the
@@ -42,6 +42,22 @@ volume, always.
 - Clean uninstall, no leftover scoreboards
 
 Runs anywhere vanilla does. Made by SapperSquad.
+
+## Promo art
+
+Regenerate everything with `javac tools/GenPromo.java -d build/tools && java -cp build/tools GenPromo promo`.
+Art that states numbers or features must stay regenerable - edit GenPromo.java, never the PNG.
+
+| File | Use |
+|---|---|
+| `promo/icon.png` (512) | project icon |
+| `promo/banner.png` (1920x640) | header / social card |
+| `promo/gallery-1-tracks.png` | gallery 1 - the six tracks |
+| `promo/gallery-2-buffs.png` | gallery 2 - buff ladder |
+| `promo/gallery-3-hud.png` | gallery 3 - REAL in-game HUD |
+| `promo/gallery-4-compat.png` | gallery 4 - vanilla + modded |
+
+Gallery order to upload: 3 (real gameplay), 1, 2, 4.
 
 ## Changelog
 
