@@ -2,8 +2,8 @@
 
 Publish target: **Modrinth** + **CurseForge** (datapack). Creator: **SapperSquad**.
 Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
-License: **MIT** (see LICENSE) - Alex's call 2026-07-28, reversing the brief ARR policy
-from the same day. Set MIT in the Modrinth/CurseForge project settings.
+License: split policy (Alex, 2026-07-28) - set **All Rights Reserved** in the
+Modrinth/CurseForge project settings; the GitHub repo's LICENSE is **MIT**.
 
 **UPLOAD THIS FILE to Modrinth/CurseForge:** `dist/Nutriwork-Datapack-v1.5.1.zip`
 (pack.mcmeta at the zip root - stores require that). Attach
