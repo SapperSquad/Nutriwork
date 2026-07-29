@@ -5,7 +5,13 @@ Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
 License: **MIT** (see LICENSE) - Alex's call 2026-07-28, reversing the brief ARR policy
 from the same day. Set MIT in the Modrinth/CurseForge project settings.
 
-Release file: `Nutriwork-v1.5.1.zip` (built by `tools/build-release.ps1`) bundles the
+**UPLOAD THIS FILE to Modrinth/CurseForge:** `dist/Nutriwork-Datapack-v1.5.1.zip`
+(pack.mcmeta at the zip root - stores require that). Attach
+`Nutriwork-HUD-ResourcePack-v1.0.zip` as an *additional file* on the same version.
+**Do NOT upload `Nutriwork-v1.5.1.zip`** - it is a zip-of-zips for GitHub/direct download
+only; Modrinth rejects it with "No pack.mcmeta present for resourcepack file".
+
+Legacy note: `Nutriwork-v1.5.1.zip` (built by `tools/build-release.ps1`) bundles the
 **datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
 `Nutriwork-Datapack-v1.5.1.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
 if a store prefers separate uploads.

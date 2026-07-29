@@ -53,7 +53,7 @@ pack — see `HUD.md`.
 
 ## Install
 
-The download (`Nutriwork-v1.3.0.zip`) contains two packs and an `INSTALL.txt`:
+The download (`Nutriwork-v1.5.1.zip`) contains two packs and an `INSTALL.txt`:
 
 1. **Nutriwork Datapack.zip** (required) — drop into your world's `datapacks/` folder
    (single-player: *Open World Folder → datapacks*; server: `world/datapacks/`), then
