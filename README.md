@@ -53,7 +53,7 @@ pack — see `HUD.md`.
 
 ## Install
 
-The download (`Nutriwork-v1.5.1.zip`) contains two packs and an `INSTALL.txt`:
+The download (`Nutriwork-v1.3.0.zip`) contains two packs and an `INSTALL.txt`:
 
 1. **Nutriwork Datapack.zip** (required) — drop into your world's `datapacks/` folder
    (single-player: *Open World Folder → datapacks*; server: `world/datapacks/`), then
@@ -91,11 +91,3 @@ for the mapping and how to add more mods.
 ---
 
 Made by **SapperSquad**. Part of a wider suite of Minecraft mods and packs.
-
-## Copyright
-
-Copyright (c) 2026 SapperSquad. All rights reserved.
-
-No license is granted: this work may not be copied, modified,
-redistributed, or included in other distributions without express
-permission from the copyright holder.
