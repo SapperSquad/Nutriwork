@@ -22,9 +22,9 @@ if a store prefers separate uploads.
 
 ## Short description (≤ 256 chars)
 
-> Eat a balanced diet, earn buffs. Nutriwork sorts every food into six tracks — fruit,
-> veg, grain, meat, sugar, water — and rewards variety with Regeneration, Resistance,
-> Haste and more. Diet-style depth, zero mods. 1.21–1.21.1.
+> Eat a balanced diet, earn buffs. Six food tracks, real hydration, and a monotony penalty
+> so variety actually wins. Junk food costs you. Diet-style depth as a pure vanilla
+> datapack — no mods. 1.21–1.21.1.
 
 ## Long description
 
@@ -38,11 +38,23 @@ different groups** in a sitting for the **Well-Fed** absorption bonus. Let your 
 low and you'll feel it. Gorge on one thing and you'll just get **stuffed** — variety beats
 volume, always.
 
+**Eat the same thing every day and it stops working.** A food you keep repeating gives
+less and less — full value twice, then half, then a quarter. Eat something else for a
+minute and it recovers. A varied plate always pays best; that's the whole point.
+
+**And some things were never food.** Rotten flesh, spider eyes and pufferfish *drain* your
+Meat track; poisonous potatoes drain Veg. Eating them in an emergency is still a fair
+choice — it just isn't a free one. Every single vanilla food is accounted for.
+
 - **Six nutrition tracks**, balanced-diet buffs that scale with how varied you eat
 - **Hydration**, over-eating and cuisine-variety systems on top of the classic groups
+- **Monotony penalty** — repetition gives diminishing returns, so variety genuinely wins
+- **Junk food costs you** — spoiled and toxic food drains nutrition instead of doing nothing
+- **Its own advancement tab** — Balanced Breakfast, Well Rounded, Full Plate and more
 - A cycling **HUD** (`/trigger nw.hud`): bossbar dashboard or compact actionbar, plus a full
   **journal** readout — with an optional resource pack for food-group icons
-- **Server-tunable** — every value in one config function, `/reload` to apply
+- **Server-tunable** — every value in one config function, plus one-command balance presets
+  (`relaxed` / `normal` / `hardcore`)
 - **Data-driven foods** — reclassify anything by editing one item tag
 - **Modded-food ready** — reads `c:foods/*` and Pantrywork tags; no-ops on vanilla
 - Clean uninstall, no leftover scoreboards
