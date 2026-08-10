@@ -77,7 +77,61 @@ Art that states numbers or features must stay regenerable - edit GenPromo.java, 
 
 Gallery order to upload: 3 (real gameplay), 1, 2, 4.
 
-## Changelog
+## Version changelog — PASTE THIS into the upload form
+
+Modrinth and CurseForge each have a **per-version** changelog field, and Modrinth builds the
+project's Changelog tab by aggregating them. So paste **only the current version's block**,
+never the whole history below (that section is the internal dev log).
+
+v1.0–v1.5.1 were never published, so 1.6.0 ships as a **first release** — don't paste the
+older entries; they advertise bugs no player ever had.
+
+> **Nutriwork 1.6.0 — first release**
+>
+> Six nutrition tracks (fruit, veg, grain, meat, sugar, water) with balanced-diet buffs,
+> hydration, over-eating and cuisine-variety systems.
+>
+> - **Monotony penalty** — eating the same food repeatedly gives diminishing returns, so
+>   variety genuinely wins
+> - **Junk food costs you** — rotten flesh, spider eyes, pufferfish and poisonous potatoes
+>   drain nutrition instead of doing nothing
+> - **Three HUD modes** — bossbar dashboard, compact actionbar, or off; hide any bar you
+>   don't want
+> - **Its own advancement tab**, an in-game guide book, and a full journal readout
+> - **Server-tunable** — every value in one config file, plus `relaxed` / `normal` /
+>   `hardcore` presets
+> - **Modded-food ready** — reads `c:foods/*` and Pantrywork tags, verified against Farmer's
+>   Delight, Croptopia, Pam's HarvestCraft and Ocean's/End's Delight
+>
+> **Optional:** the companion HUD resource pack (attached to this version) adds food-group
+> icons to the bars. The datapack is complete without it.
+>
+> Vanilla 1.21–1.21.1. No mods required.
+
+From 1.6.1 onward, paste only that release's new section and let the tab accumulate.
+
+## Upload form settings
+
+| Field | Value |
+|---|---|
+| Primary file | `dist/Nutriwork-Datapack-v1.6.0.zip` |
+| Additional file | `dist/Nutriwork-HUD-ResourcePack-v1.0.zip` |
+| Version number | `1.6.0` |
+| Loaders | **Datapack** only (raw zip, no mod loader involved) |
+| Game versions | **1.21**, **1.21.1** (pack_format 48 — verified against 1.21.1 `version.json`) |
+| Server side | **Required** (the pack lives in the world; all logic is server-side) |
+| Client side | **Unsupported** (nothing installs client-side; the HUD is vanilla bossbars) |
+| License | **All Rights Reserved** (split policy — the GitHub repo stays MIT) |
+| Modrinth categories | Game Mechanics (main), Food, Utility |
+| CurseForge categories | Quality of Life (or Utility), + Miscellaneous |
+
+**The resource pack is an ADDITIONAL FILE, not a dependency.** Modrinth's
+required/optional flags apply to *dependencies* (other projects), not to extra files on a
+version — additional files carry no flag, users just choose whether to download it. Say it's
+optional in the changelog text (above) so nobody thinks they need it. Only split it into its
+own Modrinth project + optional dependency if you later want it findable on its own.
+
+## Changelog (internal dev log — do NOT paste wholesale)
 
 ### v1.6.0 - junk food, monotony, presets and an advancement tab
 - **Junk food now costs you.** Rotten flesh, spider eyes and pufferfish drain your Meat
