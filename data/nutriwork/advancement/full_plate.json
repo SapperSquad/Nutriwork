@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:enchanted_golden_apple"
+                             },
+                    "title":  "Full Plate",
+                    "description":  "Fill all five food groups to 100.",
+                    "frame":  "challenge",
+                    "show_toast":  true,
+                    "announce_to_chat":  true
+                },
+    "parent":  "nutriwork:well_rounded",
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

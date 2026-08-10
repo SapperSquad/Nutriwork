@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:cookie"
+                             },
+                    "title":  "Too Much of a Good Thing",
+                    "description":  "Keep eating when you are already stuffed.",
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true
+                },
+    "parent":  "nutriwork:root",
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

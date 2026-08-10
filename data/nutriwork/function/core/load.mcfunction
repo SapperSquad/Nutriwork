@@ -30,6 +30,9 @@ scoreboard objectives add nw.b_grain dummy
 scoreboard objectives add nw.b_meat dummy
 scoreboard objectives add nw.b_sugar dummy
 scoreboard objectives add nw.b_water dummy
+scoreboard objectives add nw.calc dummy
+scoreboard objectives add nw.lasttag dummy
+scoreboard objectives add nw.repeat dummy
 
 function nutriwork:config/defaults
 scoreboard players add #next nw.id 0

@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:bread"
+                             },
+                    "title":  "Balanced Breakfast",
+                    "description":  "Keep three food groups at 50 or more.",
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true
+                },
+    "parent":  "nutriwork:root",
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

@@ -1,7 +1,8 @@
-# nutriwork:eat/water_bottle  — drinking a plain water bottle (minecraft:potion / minecraft:water)
-# Predicate shape verified against 1.21.1 source: ItemPotionsPredicate (registered
-# "potion_contents", value = HolderSet<Potion>), nested under the item predicate's
-# "predicates" map. See advancement/eat/water_bottle.json.
-scoreboard players operation @s nw.hydration += #val_hydrate nw.const
+# nutriwork:eat/water_bottle
+scoreboard players operation #amt nw.calc = #val_hydrate nw.const
+scoreboard players set #tag nw.calc 17
+function nutriwork:core/monotony
+scoreboard players operation @s nw.hydration += #amt nw.calc
 execute if score @s nw.hydration matches 101.. run scoreboard players set @s nw.hydration 100
+function nutriwork:core/after_eat
 advancement revoke @s only nutriwork:eat/water_bottle

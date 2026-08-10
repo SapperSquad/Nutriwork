@@ -29,4 +29,7 @@ scoreboard objectives remove nw.b_grain
 scoreboard objectives remove nw.b_meat
 scoreboard objectives remove nw.b_sugar
 scoreboard objectives remove nw.b_water
+scoreboard objectives remove nw.calc
+scoreboard objectives remove nw.lasttag
+scoreboard objectives remove nw.repeat
 tellraw @a [{"text":"[Nutriwork] ","color":"yellow","bold":true},{"text":"Uninstalled. You can now remove the datapack and /reload.","color":"gray","bold":false}]

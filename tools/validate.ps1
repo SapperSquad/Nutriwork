@@ -60,6 +60,27 @@ foreach ($fn in $fns) {
   }
 }
 
+# --- advancement display: background is a FULL TEXTURE PATH on 1.21.1 ---
+# Verified against data/minecraft/advancement/story/root.json inside the 1.21.1 client.jar:
+#     "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+# The bare sprite id ("minecraft:gui/advancements/backgrounds/x") is the MC 26.1 form and
+# renders as the black/magenta missing-texture checkerboard here, with NOTHING in the log.
+# Beware: this machine also caches 26.1 jars for the Fabric projects - always confirm which
+# Minecraft version a jar is before copying a format out of it.
+foreach ($a in Get-ChildItem "$root\data\nutriwork\advancement" -Recurse -Filter *.json) {
+  $j = [IO.File]::ReadAllText($a.FullName,[Text.Encoding]::UTF8) | ConvertFrom-Json
+  $bg = $j.display.background
+  if ($bg) {
+    if ($bg -notlike '*textures/*' -or $bg -notlike '*.png') {
+      $errors.Add("$($a.Name): advancement background '$bg' must be a full texture path ending in .png (1.21.1 form), e.g. minecraft:textures/gui/advancements/backgrounds/husbandry.png - the bare sprite id is MC 26.1 and renders as missing-texture")
+    }
+  }
+  # icon must use the 1.20.5+ ItemStack form {"id": ...}, not the old {"item": ...}
+  if ($j.display.icon -and -not $j.display.icon.id) {
+    $errors.Add("$($a.Name): advancement icon must be {`"id`": `"minecraft:...`"} (1.20.5+ ItemStack codec), not {`"item`": ...}")
+  }
+}
+
 # --- every grant tier must contain at least one real item ---
 # sugar_high and grain_high shipped EMPTY for five versions: the tier existed and was
 # reachable in code, but no food on earth could fill it. A compat-only tier is allowed

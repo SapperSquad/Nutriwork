@@ -23,3 +23,7 @@ execute if score @s nw.fr_veg matches ..-1 run scoreboard players set @s nw.fr_v
 execute if score @s nw.fr_grain matches ..-1 run scoreboard players set @s nw.fr_grain 0
 execute if score @s nw.fr_protein matches ..-1 run scoreboard players set @s nw.fr_protein 0
 execute if score @s nw.fr_sugar matches ..-1 run scoreboard players set @s nw.fr_sugar 0
+
+# monotony forgives one step per minute, so variety restores full food value quickly
+scoreboard players remove @s nw.repeat 1
+execute if score @s nw.repeat matches ..-1 run scoreboard players set @s nw.repeat 0

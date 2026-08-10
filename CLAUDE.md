@@ -6,7 +6,17 @@ across groups earns passive buffs, an unbalanced diet earns none. Namespace `nut
 by **SapperSquad**. There is a dedicated `nutriwork` build agent at
 `~/.claude/agents/nutriwork.md` — route work through it.
 
-## Status — v1.5.0 (balance pass), load-clean, IN-GAME VERIFIED
+## Status — v1.6.0 (junk food, monotony, presets, advancement tab), IN-GAME VERIFIED
+
+- v1.6.0 adds: **junk food** that drains (completing all 41 vanilla foods; ominous_bottle
+  excluded on purpose), a **monotony penalty** (same grant-tag repeatedly = diminishing
+  returns, forgiven one step per minute), **balance presets**
+  (config/relaxed|normal|hardcore), and a **visible advancement tab**.
+- Alex confirmed all four working in-game. Smoke suite is now **20 assertions**.
+- **Project moved** to `C:\Users\alexh\Documents\Minecraft Projects\`. PhytoForge (the
+  dev client used for testing) moved too.
+
+## Prior status — v1.5.0 (balance pass), load-clean, IN-GAME VERIFIED
 
 - **All six groups confirmed rising on eat** (Alex, 2026-07-27) after the v1.4.1 fixes below.
 - v1.5.0: decay retuned by `value / decay` = minutes-of-play per food (food 4→1/min, water

@@ -29,6 +29,9 @@ function nutriwork:test/t_sugar_med
 function nutriwork:test/t_sugar_low
 function nutriwork:test/t_water
 function nutriwork:test/t_water_bottle
+function nutriwork:test/t_junk_protein
+function nutriwork:test/t_junk_veg
+function nutriwork:test/t_monotony
 
 tellraw @a [{"text":"passed: ","color":"gray"},{"score":{"name":"#pass","objective":"nw.test"},"color":"green","bold":true},{"text":"   failed: ","color":"gray","bold":false},{"score":{"name":"#fail","objective":"nw.test"},"color":"red","bold":true}]
 execute if score #fail nw.test matches 0 run tellraw @a [{"text":"SMOKE TEST PASSED — eating works on every track.","color":"green","bold":true}]

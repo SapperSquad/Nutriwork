@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:golden_apple"
+                             },
+                    "title":  "Nutriwork",
+                    "description":  "Your diet finally matters. Eat across the six tracks to earn buffs.",
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "background":  "minecraft:textures/gui/advancements/backgrounds/husbandry.png"
+                },
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:tick"
+                              }
+                 }
+}

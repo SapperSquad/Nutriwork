@@ -5,15 +5,15 @@ Environment: Data Pack. Loaders: Datapack. MC versions: **1.21, 1.21.1**.
 License: split policy (Alex, 2026-07-28) - set **All Rights Reserved** in the
 Modrinth/CurseForge project settings; the GitHub repo's LICENSE is **MIT**.
 
-**UPLOAD THIS FILE to Modrinth/CurseForge:** `dist/Nutriwork-Datapack-v1.5.1.zip`
+**UPLOAD THIS FILE to Modrinth/CurseForge:** `dist/Nutriwork-Datapack-v1.6.0.zip`
 (pack.mcmeta at the zip root - stores require that). Attach
 `Nutriwork-HUD-ResourcePack-v1.0.zip` as an *additional file* on the same version.
-**Do NOT upload `Nutriwork-v1.5.1.zip`** - it is a zip-of-zips for GitHub/direct download
+**Do NOT upload `Nutriwork-v1.6.0.zip`** - it is a zip-of-zips for GitHub/direct download
 only; Modrinth rejects it with "No pack.mcmeta present for resourcepack file".
 
-Legacy note: `Nutriwork-v1.5.1.zip` (built by `tools/build-release.ps1`) bundles the
+Legacy note: `Nutriwork-v1.6.0.zip` (built by `tools/build-release.ps1`) bundles the
 **datapack** (required) + the **optional HUD resource pack** + an `INSTALL.txt`. Standalone
-`Nutriwork-Datapack-v1.5.1.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
+`Nutriwork-Datapack-v1.6.0.zip` and `Nutriwork-HUD-ResourcePack-v1.0.zip` are also in `dist/`
 if a store prefers separate uploads.
 
 ## Tagline
@@ -66,6 +66,17 @@ Art that states numbers or features must stay regenerable - edit GenPromo.java, 
 Gallery order to upload: 3 (real gameplay), 1, 2, 4.
 
 ## Changelog
+
+### v1.6.0 - junk food, monotony, presets and an advancement tab
+- **Junk food now costs you.** Rotten flesh, spider eyes and pufferfish drain your Meat
+  track; poisonous potatoes drain Veg. Every one of Minecraft's 41 foods is now accounted
+  for. (Vanilla already punishes these with hunger and poison - Nutriwork's cost is
+  nutritional, never direct damage.)
+- **Variety beats repetition.** Eating the same food over and over gives less: full value
+  twice, then half, then a quarter. A minute of eating anything else forgives a step.
+- **Balance presets:** `/function nutriwork:config/relaxed | normal | hardcore`.
+- **A real advancement tab** - Balanced Breakfast, Well Rounded, Full Plate, Well Hydrated,
+  Varied Palate, and two you earn the hard way.
 
 ### v1.5.1 - test coverage + modded compat verified
 - Added an in-game smoke test (/function nutriwork:test/smoke) that proves eating works on

@@ -128,6 +128,36 @@ Judgment calls already made, with reasons. Reopen only with new evidence.
   for five versions — reachable in the code, unreachable in play. `tools/validate.ps1` now
   reports item counts per tier so an empty one is visible.
 
+- **Junk food drains, it does not damage** (v1.6.0). Rotten flesh / spider eye / pufferfish
+  drain Meat; poisonous potato drains Veg. Vanilla already punishes these with hunger and
+  poison, so adding damage would double-dip and break "pause, never punish" — the cost is
+  nutritional. This also completed the roster: all 41 vanilla foods (per `Foods.java`) are
+  now accounted for. **`ominous_bottle` is deliberately excluded** — it is a raid-mechanic
+  trigger, not nutrition; classifying it would imply food value it does not have.
+
+- **Monotony is tracked per grant-TAG, not per item** (v1.6.0). A consume reward cannot see
+  which item was eaten, so "the same food again" means "the same grant-tag fired again".
+  Full value for the first two, half, then a quarter; `core/decay` forgives one step per
+  minute so variety restores full value quickly. Serves the "balance is the reward" pillar
+  more directly than anything else in the pack.
+
+- **Presets are runtime overrides, not files to swap** (v1.6.0). `config/relaxed|normal|
+  hardcore` just set the same constants, so they apply instantly and are undone by the next
+  `/reload` (which re-runs `config/defaults`). Each one says so in chat. Permanent changes
+  still belong in `config/defaults.mcfunction` — one source of truth for the numbers.
+
+- **The advancement tree uses the `advancements={id=false}` selector as its "not earned"
+  test** (v1.6.0), so there are no parallel flag objectives and earned players stop matching
+  the selector entirely — the polling cost decays to nothing. Children use
+  `minecraft:impossible` and are granted by command; only the root has a real trigger.
+
+- **1.21.1 advancement `background` is a FULL texture path ending in `.png`.** The bare
+  sprite id (`minecraft:gui/advancements/backgrounds/x`) is the **MC 26.1** form and renders
+  as the black/magenta missing-texture checkerboard with *nothing* in the log. This machine
+  caches jars for both 1.21.1 NeoForge and 26.x Fabric projects, so confirm a jar's
+  `version.json` before copying any format out of it — reading the 26.1 jar is exactly how
+  this got broken twice. `tools/validate.ps1` now enforces the 1.21.1 form.
+
 - **Objective creation is idempotent-by-tolerance.** `core/load` re-adds objectives every
   `/reload`, which logs a harmless "already exists". Accepted deliberately — removing and
   re-adding would wipe player scores.

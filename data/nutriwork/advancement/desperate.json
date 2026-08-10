@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:rotten_flesh"
+                             },
+                    "title":  "Desperate Measures",
+                    "description":  "Eat something that was never food.",
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true
+                },
+    "parent":  "nutriwork:root",
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

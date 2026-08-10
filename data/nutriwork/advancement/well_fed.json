@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:pumpkin_pie"
+                             },
+                    "title":  "Varied Palate",
+                    "description":  "Eat four different food groups in one sitting.",
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true
+                },
+    "parent":  "nutriwork:root",
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

@@ -17,3 +17,6 @@ execute as @a run function nutriwork:core/apply
 # decay runs once a minute
 scoreboard players add #min nw.timer 1
 execute if score #min nw.timer matches 60.. run function nutriwork:core/minute
+
+# award the visible advancement tree (cheap: earned players stop matching)
+function nutriwork:core/advancements

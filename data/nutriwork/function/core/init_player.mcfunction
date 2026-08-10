@@ -13,6 +13,8 @@ scoreboard players set @s nw.fr_grain 0
 scoreboard players set @s nw.fr_protein 0
 scoreboard players set @s nw.fr_sugar 0
 scoreboard players set @s nw.icons 0
+scoreboard players set @s nw.lasttag 0
+scoreboard players set @s nw.repeat 0
 scoreboard players set @s nw.cov_p 9
 scoreboard players set @s nw.var_p 9
 scoreboard players set @s nw.b_fruit 1

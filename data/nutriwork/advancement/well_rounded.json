@@ -1,0 +1,18 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:cooked_beef"
+                             },
+                    "title":  "Well Rounded",
+                    "description":  "Keep all five food groups at 50 or more.",
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true
+                },
+    "parent":  "nutriwork:balanced",
+    "criteria":  {
+                     "auto":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

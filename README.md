@@ -37,6 +37,31 @@ Buffs refresh continuously while your diet holds and fade a few seconds after it
 - **low on water** → Weakness (and Slowness if you're really parched) — so drink up
 - **gorging when already full** → briefly "stuffed" (Slowness); variety beats volume
 
+## Junk food costs you
+
+Rotten flesh, spider eyes and pufferfish **drain** your Meat track; poisonous potatoes
+drain Veg. Vanilla already punishes these with hunger and poison - Nutriwork's cost is
+nutritional. Eating them is still a valid emergency, just not a free one.
+
+## Variety beats repetition
+
+Eat the same thing over and over and it starts giving less: full value for the first two,
+half after that, a quarter once you're truly sick of it. A minute of eating anything else
+forgives a step, so a varied diet always pays best.
+
+## Balance presets
+
+Server owners can switch the whole feel in one command:
+
+    /function nutriwork:config/relaxed    nutrition lasts longer, gentler junk penalty
+    /function nutriwork:config/normal     the default
+    /function nutriwork:config/hardcore   eat often or lose your buffs
+
+## Advancements
+
+Nutriwork ships its own advancement tab: Balanced Breakfast, Well Rounded, Full Plate,
+Well Hydrated, Varied Palate - plus a couple you earn the hard way.
+
 ## The HUD
 
 Press **`/trigger nw.hud`** to cycle the HUD through three modes: **off → bossbars →
@@ -53,7 +78,7 @@ pack — see `HUD.md`.
 
 ## Install
 
-The download (`Nutriwork-v1.5.1.zip`) contains two packs and an `INSTALL.txt`:
+The download (`Nutriwork-v1.6.0.zip`) contains two packs and an `INSTALL.txt`:
 
 1. **Nutriwork Datapack.zip** (required) — drop into your world's `datapacks/` folder
    (single-player: *Open World Folder → datapacks*; server: `world/datapacks/`), then

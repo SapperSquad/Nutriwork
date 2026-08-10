@@ -23,7 +23,7 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 Add-Type -AssemblyName System.IO.Compression
 $root  = Split-Path $PSScriptRoot -Parent
-$ver   = '1.5.1'   # datapack / release version
+$ver   = '1.6.0'   # datapack / release version
 $rpver = '1.0'     # resource pack version
 
 $dist  = Join-Path $root 'dist'
