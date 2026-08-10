@@ -63,6 +63,22 @@ public class GenPromo {
         g.fill(new RoundRectangle2D.Float(x, y, (int)(w * pct), h, h, h));
     }
 
+    /** Reads a constant straight out of config/defaults.mcfunction so the art can never
+     *  drift from the pack's real numbers. Falls back to the default if not found. */
+    static int cfg(String name, int fallback) {
+        try {
+            File f = new File("data/nutriwork/function/config/defaults.mcfunction");
+            if (!f.exists()) return fallback;
+            for (String line : java.nio.file.Files.readAllLines(f.toPath())) {
+                String s = line.trim();
+                if (s.startsWith("scoreboard players set #" + name + " nw.const ")) {
+                    return Integer.parseInt(s.substring(s.lastIndexOf(' ') + 1).trim());
+                }
+            }
+        } catch (Exception ignored) { }
+        return fallback;
+    }
+
     public static void main(String[] args) throws Exception {
         File out = new File(args.length > 0 ? args[0] : "promo");
         out.mkdirs();
@@ -72,6 +88,7 @@ public class GenPromo {
         galleryBuffs(new File(out, "gallery-2-buffs.png"));
         galleryShot(new File(out, "gallery-3-hud.png"), new File(out, "hud-clean.png"));
         galleryCompat(new File(out, "gallery-4-compat.png"));
+        galleryVariety(new File(out, "gallery-5-variety.png"));
         System.out.println("promo art written to " + out.getAbsolutePath());
     }
 
@@ -227,6 +244,75 @@ public class GenPromo {
             g.setFont(f(28, Font.PLAIN)); g.setColor(DIM);
             center(g, "(in-game screenshot missing: promo/hud-bossbars.png)", W/2, 400);
         }
+        g.dispose(); ImageIO.write(img, "PNG", file);
+    }
+
+    // ---- gallery 5: monotony + junk food (the two systems that enforce variety) ----
+    // Every number here is READ FROM config/defaults.mcfunction, so this card cannot
+    // silently disagree with the pack. Change the config, re-run, the art follows.
+    static void galleryVariety(File file) throws Exception {
+        int W = 1280, H = 720;
+        int med  = cfg("val_med", 25);
+        int junk = cfg("val_junk", 15);
+        BufferedImage img = new BufferedImage(W, H, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = g2(img); backdrop(g, W, H);
+        g.setFont(f(56, Font.BOLD)); g.setColor(INK); center(g, "Variety is the whole point", W/2, 96);
+        g.setFont(f(26, Font.PLAIN)); g.setColor(DIM);
+        center(g, "Two systems make sure of it - and neither one ever damages you.", W/2, 140);
+
+        // divider
+        g.setColor(new Color(255,255,255,26));
+        g.fillRect(W/2 - 1, 190, 2, 400);
+
+        // ---- left: monotony ----
+        g.setFont(f(30, Font.BOLD)); g.setColor(GOLD);
+        g.drawString("Eat the same thing repeatedly", 70, 224);
+        g.setFont(f(23, Font.PLAIN)); g.setColor(DIM);
+        g.drawString("and it gives you less each time:", 70, 258);
+        int[] seq = { med, med, med/2, med/2, med/4 };
+        int y = 300;
+        for (int i = 0; i < seq.length; i++) {
+            double frac = (double) seq[i] / med;
+            g.setFont(f(20, Font.PLAIN)); g.setColor(DIM);
+            g.drawString("bite " + (i+1), 70, y + 17);
+            bar(g, 160, y, 320, 22, C[1], frac);
+            g.setFont(f(21, Font.BOLD));
+            g.setColor(frac < 1.0 ? new Color(0xE8,0x6A,0x6A) : INK);
+            g.drawString("+" + seq[i], 496, y + 18);
+            y += 44;
+        }
+        g.setFont(f(21, Font.PLAIN)); g.setColor(DIM);
+        g.drawString("Eat anything else for a minute", 70, y + 34);
+        g.drawString("and it recovers.", 70, y + 62);
+
+        // ---- right: junk food ----
+        int rx = W/2 + 60;
+        g.setFont(f(30, Font.BOLD)); g.setColor(GOLD);
+        g.drawString("Some things were never food", rx, 224);
+        g.setFont(f(23, Font.PLAIN)); g.setColor(DIM);
+        g.drawString("and they cost you nutrition:", rx, 258);
+        String[][] junks = {
+            { "Rotten Flesh",     "Meat" },
+            { "Spider Eye",       "Meat" },
+            { "Pufferfish",       "Meat" },
+            { "Poisonous Potato", "Veg"  },
+        };
+        int jy = 300;
+        for (String[] jk : junks) {
+            g.setColor(new Color(255,255,255,14));
+            g.fill(new RoundRectangle2D.Float(rx - 14, jy - 4, 520, 36, 10, 10));
+            g.setFont(f(23, Font.PLAIN)); g.setColor(INK);
+            g.drawString(jk[0], rx + 6, jy + 21);
+            g.setFont(f(22, Font.BOLD)); g.setColor(new Color(0xE8,0x5A,0x5A));
+            g.drawString("-" + junk + "  " + jk[1], rx + 330, jy + 21);
+            jy += 44;
+        }
+        g.setFont(f(21, Font.PLAIN)); g.setColor(DIM);
+        g.drawString("Still a fair choice in an emergency.", rx, jy + 34);
+        g.drawString("Just never a free one.", rx, jy + 62);
+
+        g.setFont(f(22, Font.PLAIN)); g.setColor(DIM);
+        center(g, "Every one of Minecraft's foods is accounted for.", W/2, H - 46);
         g.dispose(); ImageIO.write(img, "PNG", file);
     }
 

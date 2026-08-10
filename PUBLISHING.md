@@ -74,8 +74,13 @@ Art that states numbers or features must stay regenerable - edit GenPromo.java, 
 | `promo/gallery-2-buffs.png` | gallery 2 - buff ladder |
 | `promo/gallery-3-hud.png` | gallery 3 - REAL in-game HUD |
 | `promo/gallery-4-compat.png` | gallery 4 - vanilla + modded |
+| `promo/gallery-5-variety.png` | gallery 5 - monotony + junk food (numbers read from config) |
 
-Gallery order to upload: 3 (real gameplay), 1, 2, 4.
+Gallery order to upload: **3** (real gameplay), **1** (the six tracks), **5** (monotony +
+junk food - the biggest differentiator), **2** (buff ladder), **4** (modded compat).
+
+GenPromo reads `config/defaults.mcfunction` for the numbers on card 5, so retuning the
+pack and re-running the generator keeps the art honest automatically.
 
 ## Version changelog — PASTE THIS into the upload form
 
